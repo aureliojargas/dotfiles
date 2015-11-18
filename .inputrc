@@ -1,0 +1,5 @@
+# TAB completion
+set completion-ignore-case on
+
+# No beeps
+set bell-style visible
