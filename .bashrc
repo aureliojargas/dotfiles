@@ -28,3 +28,6 @@ alias gb='git branch -va'
 alias gr='git remote -v'
 alias gl='git log -n 20 --oneline --reverse --date=short --pretty=format:"%Cgreen%h%Creset %Cred%ad%Creset %s"'
 # http://opensource.apple.com/source/Git/Git-19/src/git-htmldocs/pretty-formats.txt
+gcm() {
+    git commit -m "$*"
+}
