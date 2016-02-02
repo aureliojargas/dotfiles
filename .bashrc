@@ -13,7 +13,7 @@ LS_COLORS=$(echo "$LS_COLORS" | sed 's/:di=01;34/:di=01;33/')
 GIT_PS1_SHOWUPSTREAM='auto'   # behind (<), ahead (>), equal (=), diverged (<>)
 GIT_PS1_SHOWCOLORHINTS=1
 source ~/.git-prompt.sh
-PROMPT_COMMAND='__git_ps1 "\033[43;30m\u@\h:\w\033[m" "\n\\\$ "'
+PROMPT_COMMAND='__git_ps1 "\033[42;30m\u@\h:\w\033[m" "\n\\\$ "'
 
 # Git aliases
 alias gs='git status'
