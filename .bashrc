@@ -21,6 +21,7 @@ alias gw='git show'
 alias gsl='git stash list'
 alias gsd='git stash show -p stash@{0}'
 alias gd='git diff'
+alias gdw='GIT_PAGER= git diff'  # wrap long lines
 alias gdc='git diff --cached'
 alias ga='git add'
 alias gca='git commit --amend'
