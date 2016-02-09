@@ -19,6 +19,7 @@
 	ci = commit
 	co = checkout
 	cp = cherry-pick
+        wdiff = diff --color-words
 	unstage = reset HEAD              # remove files from index (tracking)
 	uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
 [core]
