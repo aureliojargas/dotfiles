@@ -37,3 +37,6 @@ git_cleanup() {
     git fetch -p
     git branch --merged | grep -v "^\* master" | xargs git branch -d
 }
+git_diff_blanks() {
+    git diff -w --ignore-blank-lines
+}
