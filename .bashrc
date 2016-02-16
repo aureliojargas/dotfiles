@@ -33,3 +33,7 @@ alias gla='git log -n 20 --oneline --reverse --date=short --pretty=format:"%Cgre
 gcm() {
     git commit -m "$*"
 }
+git_cleanup() {
+    git fetch -p
+    git branch --merged | grep -v "^\* master" | xargs git branch -d
+}
