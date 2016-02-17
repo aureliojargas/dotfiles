@@ -5,8 +5,6 @@
 	email = AUTHOR_EMAIL
 [core]
 	editor = vi
-[color]
-	ui = auto
 [color "diff"]
 	meta = magenta bold
 	#frag = magenta bold
