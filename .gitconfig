@@ -3,6 +3,8 @@
 [user]
 	name = AUTHOR_NAME
 	email = AUTHOR_EMAIL
+[core]
+	editor = vi
 [color]
 	ui = auto
 [color "diff"]
@@ -23,7 +25,5 @@
 	diffw = diff -w --ignore-blank-lines
 	unstage = reset HEAD              # remove files from index (tracking)
 	uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
-[core]
-	editor = vi
 [push]
 	default = simple
