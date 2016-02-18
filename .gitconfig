@@ -1,8 +1,5 @@
 # http://documentup.com/skwp/git-workflows-book#appendix-a---the-gitconfig
 
-[user]
-	name = AUTHOR_NAME
-	email = AUTHOR_EMAIL
 [core]
 	editor = vi
 [color]
@@ -28,3 +25,6 @@
 [push]
 	# http://git-scm.com/docs/git-config.html, search push.default
 	default = simple
+[include]
+	# Use separate file for username, credentials, etc
+	path = ~/.gitconfig.local
