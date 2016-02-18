@@ -1,3 +1,4 @@
+alias ls='ls --color=auto'
 alias l='ls -la'
 
 # History with timestamp
