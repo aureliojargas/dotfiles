@@ -28,7 +28,8 @@
 
 [push]
 	# http://git-scm.com/docs/git-config.html, search push.default
-	default = simple
+	default = current  # Git 1.x
+	#default = simple  # Git 2.x
 
 [include]
 	# Use separate file for username, credentials, etc
