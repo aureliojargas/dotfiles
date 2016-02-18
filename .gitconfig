@@ -1,4 +1,4 @@
-# http://documentup.com/skwp/git-workflows-book#chapter-6-sneaking-git-through-the-backdoor/appendix-a-the-gitconfig
+# http://documentup.com/skwp/git-workflows-book#appendix-a---the-gitconfig
 
 [user]
 	name = AUTHOR_NAME
