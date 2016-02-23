@@ -22,6 +22,7 @@ alias gd='git diff'
 alias gdw='GIT_PAGER= git diff'  # wrap long lines
 alias gdc='git diff --cached'
 alias ga='git add'
+alias gau='git add -u'
 alias gca='git commit --amend'
 alias gb='git branch -va'
 alias gr='git remote -v'
