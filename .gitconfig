@@ -26,6 +26,9 @@
 	# instead of a/b/c/d as prefixes for patches
 	mnemonicprefix = true
 
+[help]
+        autocorrect = 1    # fix typos
+
 [push]
 	# http://git-scm.com/docs/git-config.html, search push.default
 	default = current  # Git 1.x
