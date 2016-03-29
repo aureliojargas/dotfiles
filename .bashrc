@@ -2,6 +2,12 @@ alias ls='ls --color=auto'
 alias l='ls -la'
 alias grep='grep --color'
 
+# Lazy
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
 # History
 HISTSIZE=9999
 HISTFILESIZE=9999
