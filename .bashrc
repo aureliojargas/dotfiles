@@ -1,5 +1,6 @@
 alias ls='ls --color=auto'
 alias l='ls -la'
+alias grep='grep --color'
 
 # History
 HISTSIZE=9999
