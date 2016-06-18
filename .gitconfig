@@ -29,9 +29,9 @@
 [pager]
     # Word highlight in line-oriented diffs
     # https://github.com/git/git/tree/master/contrib/diff-highlight
-	log = diff-highlight | less
-	show = diff-highlight | less
-	diff = diff-highlight | less
+    log = diff-highlight | less
+    show = diff-highlight | less
+    diff = diff-highlight | less
 
 [help]
     autocorrect = 1    # fix typos
