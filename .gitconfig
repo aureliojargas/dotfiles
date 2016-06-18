@@ -32,6 +32,7 @@
     log = diff-highlight | less
     show = diff-highlight | less
     diff = diff-highlight | less
+    # For git >=2.9, use instead: git config interactive.diffFilter diff-highlight
 
 [help]
     autocorrect = 1    # fix typos
