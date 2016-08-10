@@ -5,6 +5,7 @@
     ci = commit
     co = checkout
     cp = cherry-pick
+    g = grep --extended-regexp --break --heading --line-number --ignore-case --show-function
     worddiff = diff --color-words
     diffw = diff -w --ignore-blank-lines
     unstage = reset HEAD              # remove files from index (tracking)
