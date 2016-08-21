@@ -37,5 +37,5 @@ gcm() {
 }
 git_cleanup() {
     git fetch -p
-    git branch --merged | egrep -v "^\* (master|dev|homologacao|producao)" | xargs git branch -d
+    git branch --merged | egrep -v "^\* (master|dev|homologacao|producao|gh-pages)" | xargs git branch -d
 }
