@@ -21,5 +21,8 @@ shopt -s checkwinsize
 # Yellow folders are better than blue
 LS_COLORS=$(echo "$LS_COLORS" | sed 's/:di=01;34/:di=01;33/')
 
+# Docker
+alias docker-gc='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock spotify/docker-gc'
+
 # Git prompt and aliases
 test -r ~/.gitbash && source ~/.gitbash
