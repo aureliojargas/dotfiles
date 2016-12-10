@@ -27,6 +27,7 @@ ln -s dotfiles/.inputrc
 ln -s dotfiles/.gitconfig
 ln -s dotfiles/.gitbash
 
+# If necessary (Cloud9 already has one)
 curl -L https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh > .git-prompt.sh
 
 test -d bin || mkdir bin

@@ -3,7 +3,7 @@
 
 # The Git Prompt magic alien device
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
-source ~/.git-prompt.sh
+type __git_ps1 > /dev/null || source ~/.git-prompt.sh
 
 # Git prompt
 #GIT_PS1_SHOWDIRTYSTATE=1      # unstaged (*) and staged (+) changes
