@@ -33,11 +33,8 @@ vi .gitconfig.local
 curl -L https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh > .git-prompt.sh
 
 test -d bin || mkdir bin
-#curl -L https://raw.githubusercontent.com/git/git/master/contrib/diff-highlight/diff-highlight > ~/bin/diff-highlight
-#chmod +x bin/diff-highlight
-#
-# Now you must use make to generate the script :(
-# https://github.com/git/git/tree/master/contrib/diff-highlight
+curl -L https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy > ~/bin/diff-so-fancy
+chmod +x bin/diff-so-fancy
 ```
 
 Open a new terminal to activate it all.

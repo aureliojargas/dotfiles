@@ -33,11 +33,11 @@
 
 [pager]
     # Word highlight in line-oriented diffs
-    # https://github.com/git/git/tree/master/contrib/diff-highlight
-    log = diff-highlight | less
-    show = diff-highlight | less
-    diff = diff-highlight | less
-    # For git >=2.9, use instead: git config interactive.diffFilter diff-highlight
+    # https://github.com/so-fancy/diff-so-fancy
+    log = diff-so-fancy | less --tabs=4 -RFX
+    show = diff-so-fancy | less --tabs=4 -RFX
+    diff = diff-so-fancy | less --tabs=4 -RFX
+    # For git >=2.9, use instead: git config interactive.diffFilter diff-so-fancy
 
 [help]
     autocorrect = 1    # fix typos
