@@ -1,5 +1,6 @@
 # ~/.gitbash
-# Include this from ~/.bashrc
+# Bash setup to improve Git usage
+# Include this file from ~/.bashrc
 
 # The Git Prompt magic alien device
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
