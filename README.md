@@ -2,7 +2,7 @@
 
 My config files.
 
-I try to be minimalist. No config fireworks here.
+I try to be a minimalist. No config fireworks here.
 
 `.profile` calls `.bashrc` and there's no `.bash_profile`.
 
@@ -32,8 +32,9 @@ cp dotfiles/.gitconfig.local.template .gitconfig.local
 vi .gitconfig.local
 
 # If necessary (Cloud9 already has one)
-curl -L https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh > .git-prompt.sh
+test -f .git-prompt.sh || curl -L https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh > .git-prompt.sh
 
+# Colorful diffs
 test -d bin || mkdir bin
 curl -L https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy > bin/diff-so-fancy
 chmod +x bin/diff-so-fancy
