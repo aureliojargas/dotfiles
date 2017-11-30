@@ -23,6 +23,8 @@ ln -s dotfiles/.profile
 rm .inputrc
 ln -s dotfiles/.inputrc
 
+ln -s dotfiles/.vimrc
+
 # Git config
 ln -s dotfiles/.gitconfig
 ln -s dotfiles/.gitbash
