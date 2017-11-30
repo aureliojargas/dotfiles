@@ -4,7 +4,7 @@ My config files.
 
 I try to be a minimalist. No config fireworks here.
 
-`.profile` calls `.bashrc` and there's no `.bash_profile`.
+Everything is inside `.bashrc` and there's no `.bash_profile` or `.profile`.
 
 
 ## Initial setup in a new machine
@@ -17,12 +17,7 @@ git clone git@github.com:aureliojargas/dotfiles.git
 # Do not overwrite default .bashrc
 echo 'test -f ~/dotfiles/.bashrc && source $_' >> ~/.bashrc
 
-rm .profile
-ln -s dotfiles/.profile
-
-rm .inputrc
 ln -s dotfiles/.inputrc
-
 ln -s dotfiles/.vimrc
 
 # Git config

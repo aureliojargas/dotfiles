@@ -1,3 +1,6 @@
+# My dear ~/bin
+test -d $HOME/bin && PATH="$_:$PATH"
+
 alias ls='ls --color=auto'
 alias l='ls -la'
 alias grep='grep --color'
