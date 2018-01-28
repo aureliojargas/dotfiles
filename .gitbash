@@ -24,6 +24,7 @@ alias gdw='GIT_PAGER= git diff'  # wrap long lines
 alias gdc='git diff --cached'
 alias ga='git add'
 alias gau='git add -u'
+alias gap='git add -p'
 alias gca='git commit --amend'
 alias gpu='git push -u'
 alias gb='git branch -va'
