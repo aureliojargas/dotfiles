@@ -13,6 +13,9 @@ set visualbell
 " Show line/column number at bottom
 set ruler
 
+" Show status line at bottom (and "file has changed" indicator)
+set laststatus=2
+
 " Options for a better search experience
 set incsearch hlsearch ignorecase smartcase magic
 
