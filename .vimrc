@@ -1,3 +1,6 @@
+" Colors, please
+syntax on
+
 " Look mom, we're in the future!
 set encoding=utf-8
 
