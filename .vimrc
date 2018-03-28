@@ -10,6 +10,9 @@ cab W w | cab Q q | cab Wq wq | cab WQ wq
 " No beeps, just flashes
 set visualbell
 
+" Show line/column number at bottom
+set ruler
+
 " Options for a better search experience
 set incsearch hlsearch ignorecase smartcase magic
 
