@@ -38,3 +38,8 @@ au BufReadPost * if line("'\"")|execute("normal `\"")|endif
 " Highlight tabs and trailing spaces
 " Sample:  	   		foo bar    
 set list listchars=tab:\|·,trail:█,precedes:<,extends:>
+
+" Python defaults
+au FileType python set autoindent expandtab tabstop=4 textwidth=100
+au FileType python hi pythonString ctermfg=lightgreen
+au FileType python hi pythonRawString ctermfg=lightgreen
