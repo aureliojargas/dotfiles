@@ -21,6 +21,9 @@ shopt -s histappend      # append to (!overwrite) the history file
 # Check window size after each command, update $LINES and $COLUMNS
 shopt -s checkwinsize
 
+# Activate ** recursive glob pattern (requires bash >=4.0)
+#shopt -s globstar
+
 # Yellow folders are better than blue
 LS_COLORS=$(echo "$LS_COLORS" | sed 's/:di=01;34/:di=01;33/')
 
