@@ -39,6 +39,9 @@ au BufReadPost * if line("'\"")|execute("normal `\"")|endif
 " Sample:  	   		foo bar    
 set list listchars=tab:\|·,trail:█,precedes:<,extends:>
 
+" YAML defaults
+au FileType yaml set autoindent expandtab tabstop=2
+
 " Python defaults
 au FileType python set autoindent expandtab tabstop=4 textwidth=100
 au FileType python hi pythonString ctermfg=lightgreen
