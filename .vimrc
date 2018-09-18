@@ -46,3 +46,6 @@ au FileType yaml set autoindent expandtab tabstop=2
 au FileType python set autoindent expandtab tabstop=4 textwidth=100
 au FileType python hi pythonString ctermfg=lightgreen
 au FileType python hi pythonRawString ctermfg=lightgreen
+
+" Git commit message limited to 72 columns
+au FileType gitcommit set tw=72
