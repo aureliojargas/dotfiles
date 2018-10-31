@@ -12,7 +12,7 @@ type __git_ps1 > /dev/null 2>&1 || source ~/.git-prompt.sh
 #GIT_PS1_SHOWUNTRACKEDFILES=1  # untracked (%)
 GIT_PS1_SHOWUPSTREAM='auto'    # behind (<), ahead (>), equal (=), diverged (<>)
 GIT_PS1_SHOWCOLORHINTS=1
-PROMPT_COMMAND='__git_ps1 "\033[42;30m\u@\h:\w\033[m" "\n\\\$ "'
+PROMPT_COMMAND='__git_ps1 "\033[42;30m\u@\h:\w\033[m" " \033[33m$?\033[m\n\\\$ "'
 
 # Git aliases
 alias gs='git status'
