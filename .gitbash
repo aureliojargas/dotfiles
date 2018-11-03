@@ -12,7 +12,7 @@ type __git_ps1 > /dev/null 2>&1 || source ~/.git-prompt.sh
 #GIT_PS1_SHOWUNTRACKEDFILES=1  # untracked (%)
 GIT_PS1_SHOWUPSTREAM='auto'    # behind (<), ahead (>), equal (=), diverged (<>)
 GIT_PS1_SHOWCOLORHINTS=1
-PROMPT_COMMAND='__git_ps1 "\[\e[m\e[32m\]\w\[\e[m\]" "$(z=$?;test $z -gt 0 && echo "|\[\e[31;1m\]$z\[\e[m\]")| " "|%s"'
+PROMPT_COMMAND='__git_ps1 "\[\e[m\e[32;1m\]\w\[\e[m\]" "$(z=$?;test $z -gt 0 && echo "|\[\e[31;1m\]$z\[\e[m\]")| " "|%s"'
 # Prompt: dir|git-branch|$?| _
 
 # Git aliases
