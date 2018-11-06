@@ -15,7 +15,7 @@
     diff-conflict = "!f() { hash=$1; shift 1; git diff --cc $hash $hash^1 $hash^2 \"$@\"; }; f"
 
 [core]
-    editor = vi
+    editor = ed --loose-exit-status --prompt 'ed> '  # ed challenge :)
     excludesfile = ~/.gitignore_global
 
 [color]
