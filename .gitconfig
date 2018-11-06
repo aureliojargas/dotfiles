@@ -47,6 +47,12 @@
     default = current  # Git 1.x
     #default = simple  # Git 2.x
 
+# Always prune (remove) remote branches that were already deleted
+[remote "origin"]
+    prune = true
+[remote "upstream"]
+    prune = true
+
 [include]
     # Use separate file for username, credentials, etc
     path = ~/.gitconfig.local
