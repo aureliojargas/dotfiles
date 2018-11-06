@@ -1,15 +1,16 @@
 # My dear ~/bin
 test -d $HOME/bin && PATH="$_:$PATH"
 
-alias ls='ls --color=auto'
-alias l='ls -la'
-alias grep='grep --color'
-
 # Lazy
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+alias l='ls -la'
+
+# Colors ON
+alias ls='ls --color=auto'
+alias grep='grep --color'  # in Termux: pkg install grep
 
 # History
 HISTSIZE=9999
