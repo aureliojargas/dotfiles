@@ -15,6 +15,9 @@ GIT_PS1_SHOWCOLORHINTS=1
 PROMPT_COMMAND='__git_ps1 "\[\e[m\e[32;1m\]\w\[\e[m\]" "$(z=$?;test $z -gt 0 && echo "|\[\e[31;1m\]$z\[\e[m\]")| " "|%s"'
 # Prompt: dir|git-branch|$?| _
 
+# ed: Show a ruler as reference to git commit 50/72 max width
+alias ed-ruler="python -c \"print('-'*47 + '50|' + '-'*19 + '72|')\""
+
 # Git aliases
 alias gs='git status'
 alias gw='git show'
