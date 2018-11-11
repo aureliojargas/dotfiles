@@ -35,5 +35,9 @@ alias docker-gc='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock sp
 # JSON
 alias json-pp='python -m json.tool'
 
+# Web
+# curl -L https://raw.github.com/aureliojargas/css-grep/master/css-grep.txt > ~/.css.txt
+alias css='cat ~/.css.txt | grep -i'
+
 # Git prompt and aliases
 test -r ~/.gitbash && source ~/.gitbash
