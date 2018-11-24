@@ -21,6 +21,7 @@ alias ed-ruler="echo '-----------------------------------------------50|--------
 # Git aliases
 alias gs='git status'
 alias gw='git show'
+alias gws='git show --stat'
 alias gsl='git stash list'
 alias gsd='git stash show -p stash@{0}'
 alias gd='git diff'
