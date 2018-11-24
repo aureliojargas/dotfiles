@@ -49,5 +49,13 @@ git_cleanup() {
     git fetch -p
     git branch --merged | egrep -v "^\* (master|dev|homologacao|producao|gh-pages)" | xargs git branch -d
 }
+git_replace() {  # args: pattern replacement [use_regex]
+    if test -n "$3"
+    then
+        git grep -P -I -l "$1" | xargs replace -i -f "$1" -t "$2" --regex
+    else
+        git grep -F -I -l "$1" | xargs replace -i -f "$1" -t "$2"
+    fi
+}
 
 # vim: filetype=sh
