@@ -41,6 +41,7 @@ set list listchars=tab:\|·,trail:█,precedes:<,extends:>
 
 " Ctrl-s to save (and stay) in Insert mode (handy in mobile)
 inoremap <c-s> <c-o>:w<cr>
+noremap  <c-s> <c-o>:w<cr>
 
 " YAML defaults
 au FileType yaml set autoindent expandtab tabstop=2
