@@ -19,6 +19,7 @@ echo 'test -f ~/dotfiles/.bashrc && source $_' >> ~/.bashrc
 
 ln -s dotfiles/.inputrc
 ln -s dotfiles/.vimrc
+ln -s dotfiles/.vim
 ln -s dotfiles/.gemrc
 
 # Git config

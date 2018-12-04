@@ -53,5 +53,8 @@ au FileType python set autoindent expandtab tabstop=4 textwidth=100
 au FileType python hi pythonString ctermfg=lightgreen
 au FileType python hi pythonRawString ctermfg=lightgreen
 
+" txt2tags
+au BufNewFile,BufRead *.t2t set ft=txt2tags
+
 " Git commit message limited to 72 columns
 au FileType gitcommit set tw=72
