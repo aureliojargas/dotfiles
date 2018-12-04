@@ -39,6 +39,9 @@ au BufReadPost * if line("'\"")|execute("normal `\"")|endif
 " Sample:  	   		foo bar    
 set list listchars=tab:\|·,trail:█,precedes:<,extends:>
 
+" Ctrl-s to save (and stay) in Insert mode (handy in mobile)
+inoremap <c-s> <c-o>:w<cr>
+
 " YAML defaults
 au FileType yaml set autoindent expandtab tabstop=2
 
