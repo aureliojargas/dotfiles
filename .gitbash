@@ -50,6 +50,7 @@ git_cleanup() {
     git branch --merged | egrep -v "^\* (master|dev|homologacao|producao|gh-pages)" | xargs git branch -d
 }
 git_replace() {  # args: pattern replacement [use_regex]
+    # Get replace at https://github.com/aureliojargas/replace
     if test -n "$3"
     then
         git grep -P -I -l "$1" | xargs replace -i -f "$1" -t "$2" --regex
