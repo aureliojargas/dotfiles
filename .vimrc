@@ -25,8 +25,11 @@ set showmatch
 " Make tab completion more bash-like
 set wildmode=longest,list:full
 
-" Commands '>' and '<' walk a single space
-set shiftwidth=1
+" My (current) code preferences
+set autoindent expandtab tabstop=4
+
+" Commands '>' and '<' will walk $tabstop spaces
+set shiftwidth=0
 
 " Append one, not two spaces after periods in 'gq'
 set nojoinspaces
@@ -44,13 +47,13 @@ inoremap <c-s> <c-o>:w<cr>
 noremap  <c-s> <c-o>:w<cr>
 
 " YAML defaults
-au FileType yaml set autoindent expandtab tabstop=2
+au FileType yaml set tabstop=2
 
 " Bash defaults
-au FileType sh set autoindent expandtab tabstop=4 textwidth=100
+au FileType sh set textwidth=100
 
 " Python defaults
-au FileType python set autoindent expandtab tabstop=4 textwidth=100
+au FileType python set textwidth=100
 au FileType python hi pythonString ctermfg=lightgreen
 au FileType python hi pythonRawString ctermfg=lightgreen
 
