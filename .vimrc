@@ -46,6 +46,9 @@ noremap  <c-s> <c-o>:w<cr>
 " YAML defaults
 au FileType yaml set tabstop=2
 
+" HTML/CSS defaults
+au FileType html,css set tabstop=2 textwidth=0
+
 " Bash defaults
 au FileType sh set textwidth=100
 
