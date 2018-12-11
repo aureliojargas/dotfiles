@@ -19,9 +19,6 @@ set laststatus=2
 " Options for a better search experience
 set incsearch hlsearch ignorecase smartcase magic
 
-" Show the opening bracket when inserting the closing one
-set showmatch
-
 " Make tab completion more bash-like
 set wildmode=longest,list:full
 
