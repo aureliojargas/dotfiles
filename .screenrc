@@ -1,0 +1,35 @@
+# Autodetach session on hangup instead of terminating screen completely
+autodetach on
+
+# Define a bigger scrollback, default is 100 lines
+defscrollback 9999
+
+# Enable mouse scrolling and scroll bar history scrolling
+# https://unix.stackexchange.com/a/40246/288927
+termcapinfo xterm* ti@:te@
+
+# Turn off annoyances
+startup_message off
+vbell off
+bell_msg ""
+
+# Split related
+caption splitonly "%2n %t"
+bind 'R' wrap
+bind 'r' resize
+bind '+' resize +5
+bind '-' resize -5
+
+# Blue status bar, white text
+hardstatus alwayslastline "%w"
+sorendition 00 47
+#
+# sorendition <attribute-bg><attribute-fg> <color-bg><color-fg>
+#   attributes:
+#     0 normal, 1 invert, 2 bright bg, 3 invert+bright bg (1+2), 5 bright fg
+#   colors:
+#     0 black, 1 red, 2 green, 3 brown, 4 blue, 5 magenta, 6 cyan, 7 silver
+#   examples:
+#     00 02 - black bg (0), green fg (2), no attributes (00)
+#     20 30 - brown bg (3), black fg (0), bright bg (2) -> turns yellow
+#     35 74 - silver bg (7), blue fg (4), invert+bright bg (3), bright fg (5)
