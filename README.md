@@ -22,6 +22,7 @@ ln -s dotfiles/.vimrc
 ln -s dotfiles/.vim
 ln -s dotfiles/.screenrc
 ln -s dotfiles/.gemrc
+ln -s dotfiles/.termux
 
 # Git config
 ln -s dotfiles/.gitconfig
