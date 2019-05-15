@@ -59,4 +59,16 @@ git_replace() {  # args: pattern replacement [use_regex]
     fi
 }
 
+# Some useful Git commands that I always have to search the web
+#
+# All commits whose tree has this pattern
+# git rev-list --all | xargs git grep PATTERN
+#
+# All commits that added/removed/edited lines with this pattern
+# git log --pickaxe-regex -S PATTERN    # added/removed
+# git log -G PATTERN                    # added/removed/edited
+#
+# Log for a removed file
+# git log --full-history -- REMOVED-FILE-PATH
+
 # vim: filetype=sh
