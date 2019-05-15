@@ -7,7 +7,7 @@
 type __git_ps1 > /dev/null 2>&1 || source ~/.git-prompt.sh
 
 # Git prompt
-#GIT_PS1_SHOWDIRTYSTATE=1      # unstaged (*) and staged (+) changes
+GIT_PS1_SHOWDIRTYSTATE=1       # unstaged (*), staged (+)
 #GIT_PS1_SHOWSTASHSTATE=1      # stashed ($)
 #GIT_PS1_SHOWUNTRACKEDFILES=1  # untracked (%)
 GIT_PS1_SHOWUPSTREAM='auto'    # behind (<), ahead (>), equal (=), diverged (<>)
