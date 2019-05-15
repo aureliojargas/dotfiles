@@ -11,6 +11,7 @@ GIT_PS1_SHOWDIRTYSTATE=1       # unstaged (*), staged (+)
 #GIT_PS1_SHOWSTASHSTATE=1      # stashed ($)
 #GIT_PS1_SHOWUNTRACKEDFILES=1  # untracked (%)
 GIT_PS1_SHOWUPSTREAM='auto'    # behind (<), ahead (>), equal (=), diverged (<>)
+#GIT_PS1_DESCRIBE_STYLE=branch # master~4 when detached HEAD
 GIT_PS1_SHOWCOLORHINTS=1
 PROMPT_COMMAND='__git_ps1 "\[\e[m\e[32;1m\]\w\[\e[m\]" "$(z=$?;test $z -gt 0 && echo "|\[\e[31;1m\]$z\[\e[m\]")| " "|%s"'
 # Prompt: dir|git-branch|$?| _
