@@ -48,7 +48,9 @@ gcm() {
 }
 git_cleanup() {
     git fetch -p
-    git branch --merged | egrep -v "^\* (master|dev|homologacao|producao|gh-pages)" | xargs git branch -d
+    git branch --merged |
+        egrep -v "^\* (master|dev|homologacao|producao|gh-pages)" |
+        xargs -r git branch -d
 }
 git_replace() {  # args: pattern replacement [use_regex]
     # Get replace at https://github.com/aureliojargas/replace
