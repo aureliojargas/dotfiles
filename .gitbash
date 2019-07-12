@@ -62,6 +62,12 @@ git_replace() {  # args: pattern replacement [use_regex]
         git grep -F -I -l "$1" | xargs replace -i -f "$1" -t "$2"
     fi
 }
+git_pull_forced() {
+    # I'm assuming 10 commits ago the local is sync'ed with the remote
+    git fetch
+    git reset --hard HEAD~10
+    git merge FETCH_HEAD
+}
 
 # Some useful Git commands that I always have to search the web
 #
