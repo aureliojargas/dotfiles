@@ -49,7 +49,8 @@ gcm() {
 git_cleanup() {
     git fetch -p
     git branch --merged |
-        egrep -v "^\* (master|dev|homologacao|producao|gh-pages)" |
+        cut -c3- |
+        grep -vEx "master|gh-pages" |
         xargs -r git branch -d
 }
 git_replace() {  # args: pattern replacement [use_regex]
