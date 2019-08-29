@@ -53,7 +53,10 @@ git_cleanup() {
     git branch --merged |
         cut -c3- |
         grep -vEx "master|gh-pages" |
-        xargs -r git branch -d
+        while read branch  # xargs -r not supported in BSD :(
+        do
+            git branch -d "$branch"
+        done
 }
 git_replace() {  # args: pattern replacement [use_regex]
     # Get replace at https://github.com/aureliojargas/replace
