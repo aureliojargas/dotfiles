@@ -11,6 +11,9 @@
     unstage = reset HEAD              # remove files from index (tracking)
     uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
 
+    # http://stackoverflow.com/questions/16573555/show-conflict-diff-part-of-a-merge
+    diff-conflict = "!f() { hash=$1; shift 1; git diff --cc $hash $hash^1 $hash^2 \"$@\"; }; f"
+
 [core]
     editor = vi
     excludesfile = ~/.gitignore_global
