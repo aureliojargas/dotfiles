@@ -99,5 +99,13 @@ git_check_author() {
 #
 # Log for a removed file
 # git log --full-history -- REMOVED-FILE-PATH
+#
+# Change commit date (both)
+# git rebase -i, edit the desired commit
+# d="2017-10-08T09:51:07"
+# GIT_COMMITTER_DATE="$d" git commit --amend --date="$d"
+#
+# Rename a file in history
+# git rebase -i, edit the commit that added the file, rename it, amend.
 
 # vim: filetype=sh
