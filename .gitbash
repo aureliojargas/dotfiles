@@ -40,9 +40,9 @@ alias gpf='git push -f'
 alias gpu='git push -u'
 alias gb='git branch -va'
 alias gr='git remote -v'
-alias gl='git log -n 20 --oneline --reverse --date=short --pretty=format:"%Cblue%h%Creset %C(yellow)%ad%Creset %s"'
-alias gla='git log -n 20 --oneline --reverse --date=short --pretty=format:"%Cblue%h%Creset %C(yellow)%ad%Creset %Cred%<(25,trunc)%ae%Creset %s"'
-alias gls="gl | cut -d ' ' -f 1,3- | grep '^[0-9a-f]*'"
+alias gl='git log -n 20 --oneline --reverse --date=short --pretty=format:"%Cblue%h%Creset %C(yellow)%ad%Creset %Cred%<(25,trunc)%ae%Creset %s"'
+alias gl2="gl --color=always | tr -s ' ' | cut -d ' ' -f 1,4-"
+alias gl3="gl --color=always | tr -s ' ' | cut -d ' ' -f 1,2,4-"
 alias glg='git log --oneline --decorate --all --graph'
 
 # Git functions
