@@ -102,7 +102,7 @@ git_check_author() {
 #
 # Change commit date (both)
 # git rebase -i, edit the desired commit
-# d="2017-10-08T09:51:07"
+# d="2017-10-08T09:51:07"  # gl --date=iso-strict to get it from a commit
 # GIT_COMMITTER_DATE="$d" git commit --amend --no-edit --date="$d"
 # git rebase --continue
 #
