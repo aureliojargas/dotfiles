@@ -103,7 +103,8 @@ git_check_author() {
 # Change commit date (both)
 # git rebase -i, edit the desired commit
 # d="2017-10-08T09:51:07"
-# GIT_COMMITTER_DATE="$d" git commit --amend --date="$d"
+# GIT_COMMITTER_DATE="$d" git commit --amend --no-edit --date="$d"
+# git rebase --continue
 #
 # Rename a file in history
 # git rebase -i, edit the commit that added the file, rename it, amend.
