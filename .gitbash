@@ -50,11 +50,12 @@ gcm() {
     git commit -m "$*"
 }
 git_cleanup() {
+    local branch
     git fetch -p
     git branch --merged |
         cut -c3- |
         grep -vEx "master|gh-pages" |
-        while read branch  # xargs -r not supported in BSD :(
+        while read -r branch  # xargs -r not supported in BSD :(
         do
             git branch -d "$branch"
         done
@@ -78,6 +79,9 @@ git_check_author() {
     # List commits from all branches whose author email is not $1
     set -u
     local email="$1"
+    local branch
+    local branches
+
     branches=$(git branch -a | grep -v ' -> ' | cut -c3-)  # local+remote
 
     for branch in $branches
