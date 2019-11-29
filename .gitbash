@@ -41,14 +41,18 @@ alias gpu='git push -u'
 alias gb='git branch -va'
 alias gr='git remote -v'
 alias gl='git log -n 20 --oneline --reverse --date=short --pretty=format:"%Cblue%h%Creset %C(yellow)%ad%Creset %Cred%<(25,trunc)%ae%Creset %s"'
-alias gl2="gl --color=always | tr -s ' ' | cut -d ' ' -f 1,4-"
-alias gl3="gl --color=always | tr -s ' ' | cut -d ' ' -f 1,2,4-"
 alias glg='git log --oneline --decorate --all --graph'
 
 # Git functions
 gcm() {
     git_pre_commit
     git commit -m "$*"
+}
+gl2() {  # Show hash, summary
+    gl --color=always "$@" | tr -s ' ' | cut -d ' ' -f 1,4-
+}
+gl3() {  # Show hash, date, summary
+    gl --color=always "$@" | tr -s ' ' | cut -d ' ' -f 1,2,4-
 }
 git_cleanup() {
     local branch
