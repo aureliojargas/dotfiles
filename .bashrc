@@ -39,5 +39,10 @@ alias json-pp='python -m json.tool'
 # curl -L https://raw.github.com/aureliojargas/css-grep/master/css-grep.txt > ~/.css.txt
 alias css='cat ~/.css.txt | grep -i'
 
+# VS Code
+# List of absolute paths for files in the current dir.
+# Use it inside VS Code builtin Terminal and Alt-click a path to open it in the editor
+alias code-files='find "$PWD" -type f | grep -Fv /.git/'
+
 # Git prompt and aliases
 test -r ~/.gitbash && source ~/.gitbash
