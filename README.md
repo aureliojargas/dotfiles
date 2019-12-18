@@ -9,7 +9,7 @@ Everything is inside `.bashrc` and there's no `.bash_profile` or `.profile`.
 
 ## Initial setup in a new machine
 
-```console
+```bash
 # Download
 cd $HOME
 git clone git@github.com:aureliojargas/dotfiles.git
