@@ -20,6 +20,7 @@ PROMPT_COMMAND='__git_ps1 "\[\e[m\e[32;1m\]\w\[\e[m\]" "$(z=$?;test $z -gt 0 && 
 alias ed-ruler="echo '-----------------------------------------------50|-------------------72|'"
 
 # Git aliases
+alias gg='git grep'
 alias gs='git status'
 alias gw='git show'
 alias gws='git show --stat'
