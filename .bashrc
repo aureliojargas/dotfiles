@@ -30,7 +30,7 @@ test -z "$LS_COLORS" && eval $(dircolors)  # pkg/brew install coreutils
 LS_COLORS=${LS_COLORS/:di=01;34/:di=33}
 
 # Docker
-alias docker-gc='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock spotify/docker-gc'
+alias docker-gc='docker system prune'
 
 # JSON
 alias json-pp='python -m json.tool'
