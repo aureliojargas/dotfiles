@@ -135,6 +135,8 @@ git_pre_commit() {
 # d="2017-10-08T09:51:07"  # gl --date=iso-strict to get it from a commit
 # GIT_COMMITTER_DATE="$d" git commit --amend --no-edit --date="$d"
 # git rebase --continue
+# Note that any `git rebase` on those commits will have CommitterDate set
+# to the current date. To avoid that, use --committer-date-is-author-date
 #
 # Rename a file in history
 # git rebase -i, edit the commit that added the file, rename it, amend.
