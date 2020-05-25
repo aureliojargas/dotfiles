@@ -1,2 +1,8 @@
 # Use brew GNU utils by default, without the g prefix: gsed, gwc, ...
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+# To use software installed with pip3 install --user
+export PATH="$HOME/Library/Python/3.7/bin:$PATH"
+
+# To use GNU ed from brew
+alias ed=ged
