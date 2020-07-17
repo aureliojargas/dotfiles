@@ -10,24 +10,27 @@ Everything is inside `.bashrc` and there's no `.bash_profile` or `.profile`.
 ## Initial setup in a new machine
 
 ```bash
-# Download
+# All the following commands are home-related
 cd $HOME
-git clone git@github.com:aureliojargas/dotfiles.git
+
+# Download
+mkdir -p k/a
+git clone git@github.com:aureliojargas/dotfiles.git k/a/dotfiles
 
 # Do not overwrite default .bashrc
-echo 'test -f ~/dotfiles/.bashrc && source $_' >> ~/.bashrc
+echo 'test -f ~/k/a/dotfiles/.bashrc && source $_' >> .bashrc
 
-ln -s dotfiles/.inputrc
-ln -s dotfiles/.vimrc
-ln -s dotfiles/.vim
-ln -s dotfiles/.screenrc
-ln -s dotfiles/.gemrc
-ln -s dotfiles/.termux
+ln -s k/a/dotfiles/.inputrc
+ln -s k/a/dotfiles/.vimrc
+ln -s k/a/dotfiles/.vim
+ln -s k/a/dotfiles/.screenrc
+ln -s k/a/dotfiles/.gemrc
+ln -s k/a/dotfiles/.termux
 
 # Git config
-ln -s dotfiles/.gitconfig
-ln -s dotfiles/.gitbash
-cp dotfiles/.gitconfig.local.template .gitconfig.local
+ln -s k/a/dotfiles/.gitconfig
+ln -s k/a/dotfiles/.gitbash
+cp k/a/dotfiles/.gitconfig.local.template .gitconfig.local
 vi .gitconfig.local
 
 # If necessary (Cloud9 already has one)
