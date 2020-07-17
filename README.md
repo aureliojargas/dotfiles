@@ -43,3 +43,12 @@ chmod +x bin/diff-so-fancy
 ```
 
 Open a new terminal to activate it all.
+
+## macOS
+
+```bash
+brew install coreutils ed gnu-sed python shellcheck tig wget
+
+# GNU ed should be used as the git core.editor's ed
+ln -s /usr/local/bin/ged ~/bin/ed
+```
