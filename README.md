@@ -44,9 +44,12 @@ chmod +x bin/diff-so-fancy
 
 Open a new terminal to activate it all.
 
-## macOS
+## Additional setup for macOS
 
 ```bash
+echo 'test -f ~/k/a/dotfiles/.bashrc.osx && source $_' >> .bashrc
+
+# Install extra software
 brew install coreutils ed gnu-sed python shellcheck tig wget
 
 # GNU ed should be used as the git core.editor's ed
