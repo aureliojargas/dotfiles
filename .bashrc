@@ -25,9 +25,8 @@ shopt -s checkwinsize
 # Activate ** recursive glob pattern (requires bash >=4.0)
 #shopt -s globstar
 
-# Yellow folders are better than blue
-test -z "$LS_COLORS" && eval $(dircolors)  # pkg/brew install coreutils
-LS_COLORS=${LS_COLORS/:di=01;34/:di=33}
+# GNU ls: yellow folders, not blue
+export LS_COLORS='di=33'
 
 # Docker
 alias docker-gc='docker system prune'
