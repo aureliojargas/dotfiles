@@ -4,8 +4,5 @@ add-to-path top /usr/local/opt/coreutils/libexec/gnubin
 # Path to software installed with pip3 install --user
 add-to-path top ~/Library/Python/3.7/bin
 
-# Use brew GNU ed
-alias ed=ged
-
 # txt2regex: use brew gettext binaries
 add-to-path bottom /usr/local/Cellar/gettext/0.19.8.1/bin/
