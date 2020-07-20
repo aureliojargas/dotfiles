@@ -40,6 +40,13 @@ test -f .git-prompt.sh || curl -L https://raw.githubusercontent.com/git/git/mast
 test -d bin || mkdir bin
 curl -L https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy > bin/diff-so-fancy
 chmod +x bin/diff-so-fancy
+
+# Fish shell
+mkdir -p .config/fish/{conf.d,functions}
+ln -s ~/{k/a/dotfiles/,}.config/fish/conf.d/my.fish
+ln -s ~/{k/a/dotfiles/,}.config/fish/conf.d/my.git.fish
+ln -s ~/{k/a/dotfiles/,}.config/fish/functions/add-to-path.fish
+ln -s ~/{k/a/dotfiles/,}.config/fish/functions/fish_prompt.fish
 ```
 
 Open a new terminal to activate it all.
@@ -49,8 +56,10 @@ Open a new terminal to activate it all.
 ```bash
 ln -s k/a/dotfiles/.bashrc.osx
 
+ln -s ~/{k/a/dotfiles/,}.config/fish/conf.d/my.osx.fish
+
 # Install extra software
-brew install coreutils ed gnu-sed python shellcheck tig wget
+brew install coreutils ed fish gnu-sed python shellcheck tig wget
 
 # GNU ed should be used as the git core.editor's ed
 ln -s /usr/local/bin/ged ~/bin/ed
