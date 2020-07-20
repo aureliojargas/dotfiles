@@ -1,8 +1,11 @@
 # Use brew GNU utils by default, without the g prefix: gsed, gwc, ...
 add_to_path top /usr/local/opt/coreutils/libexec/gnubin
 
-# To use software installed with pip3 install --user
+# Path to software installed with pip3 install --user
 add_to_path top $HOME/Library/Python/3.7/bin
 
-# To use GNU ed from brew
+# Use brew GNU ed
 alias ed=ged
+
+# txt2regex: use brew gettext binaries
+add_to_path bottom /usr/local/Cellar/gettext/0.19.8.1/bin/
