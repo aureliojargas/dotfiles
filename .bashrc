@@ -45,3 +45,8 @@ alias code-files='find "$PWD" -type f | grep -Fv /.git/'
 
 # Git prompt and aliases
 test -r ~/.gitbash && source ~/.gitbash
+
+# Funções ZZ - https://funcoeszz.net
+export ZZPATH="$HOME/k/a/funcoeszz/funcoeszz"
+export ZZDIR="$HOME/k/a/funcoeszz/zz"
+alias zzon='source "$ZZPATH"'
