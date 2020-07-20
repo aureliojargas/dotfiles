@@ -1,5 +1,20 @@
+add_to_path() {
+    local dir="${2%/}"  # remove trailing /
+
+    # Skip if not a dir
+    test -d "$dir" || return 0
+
+    # Skip if already added
+    echo ":$PATH:" | grep -q ":$dir:" && return 0
+
+    case "$1" in
+        top   ) PATH="$dir:$PATH" ;;
+        bottom) PATH="$PATH:$dir" ;;
+    esac
+}
+
 # My dear ~/bin
-test -d $HOME/bin && PATH="$_:$PATH"
+add_to_path top $HOME/bin
 
 # Lazy
 alias ..="cd .."
