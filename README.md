@@ -47,7 +47,7 @@ Open a new terminal to activate it all.
 ## Additional setup for macOS
 
 ```bash
-echo 'test -f ~/k/a/dotfiles/.bashrc.osx && source $_' >> .bashrc
+ln -s k/a/dotfiles/.bashrc.osx
 
 # Install extra software
 brew install coreutils ed gnu-sed python shellcheck tig wget

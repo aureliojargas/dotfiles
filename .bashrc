@@ -65,3 +65,6 @@ test -r ~/.gitbash && source ~/.gitbash
 export ZZPATH="$HOME/k/a/funcoeszz/funcoeszz"
 export ZZDIR="$HOME/k/a/funcoeszz/zz"
 alias zzon='source "$ZZPATH"'
+
+# macOS-specific settings
+test -r ~/.bashrc.osx && source $_
