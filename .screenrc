@@ -1,3 +1,6 @@
+# Use fish as the default shell
+shell /usr/bin/fish
+
 # Autodetach session on hangup instead of terminating screen completely
 autodetach on
 
