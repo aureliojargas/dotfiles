@@ -65,9 +65,11 @@ test -r ~/.gitbash && source ~/.gitbash
 add_to_path bottom ~/.gem/ruby/2.3.0/bin
 
 # Funções ZZ - https://funcoeszz.net
-export ZZPATH="$HOME/k/a/funcoeszz/funcoeszz"
-export ZZDIR="$HOME/k/a/funcoeszz/zz"
-alias zzon='source "$ZZPATH"'
+zzon() {
+    export ZZPATH="$HOME/k/a/funcoeszz/funcoeszz"
+    export ZZDIR="$HOME/k/a/funcoeszz/zz"
+    source "$ZZPATH"
+}
 
 # macOS-specific settings
 test -r ~/.bashrc.osx && source $_
