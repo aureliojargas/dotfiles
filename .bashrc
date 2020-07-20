@@ -61,6 +61,9 @@ alias code-files='find "$PWD" -type f | grep -Fv /.git/'
 # Git prompt and aliases
 test -r ~/.gitbash && source ~/.gitbash
 
+# aurelio.net: Add path to Jekyll-related tools
+add_to_path bottom ~/.gem/ruby/2.3.0/bin
+
 # Funções ZZ - https://funcoeszz.net
 export ZZPATH="$HOME/k/a/funcoeszz/funcoeszz"
 export ZZDIR="$HOME/k/a/funcoeszz/zz"
