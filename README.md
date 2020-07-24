@@ -24,6 +24,7 @@ ln -s k/a/dotfiles/.inputrc
 ln -s k/a/dotfiles/.vimrc
 ln -s k/a/dotfiles/.vim
 ln -s k/a/dotfiles/.screenrc
+ln -s k/a/dotfiles/.tmux.conf
 ln -s k/a/dotfiles/.gemrc
 ln -s k/a/dotfiles/.termux
 
