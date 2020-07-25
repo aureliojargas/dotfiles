@@ -73,3 +73,6 @@ zzon() {
 
 # macOS-specific settings
 test -r ~/.bashrc.osx && source $_
+
+# Termux-specific settings
+test -r ~/.bashrc.termux && source $_
