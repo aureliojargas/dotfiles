@@ -104,6 +104,7 @@ set paths \
 if is_termux
     set paths $paths \
         .bashrc.termux \
+        .config/fish/conf.d/my.termux.fish \
         .termux
 end
 
