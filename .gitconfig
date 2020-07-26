@@ -20,6 +20,8 @@
     autocorrect = 1    # fix typos
 [commit]
     status = false     # no `git status` output in commit template
+[pull]
+    ff = only
 [push]
     # https://git-scm.com/docs/git-config.html#git-config-pushdefault
     default = current  # default in Git 1.x
