@@ -164,6 +164,17 @@ if is_macos
     echo Please run: brew install coreutils ed fish gnu-sed python shellcheck tig wget
 end
 
+if is_termux
+    log 'Termux: Install extra software'
+    echo Please run:
+    echo pkg update
+    echo pkg install file fish git make openssh python python2 tig vim
+    echo 'pkg install lynx  # funcoeszz'
+    echo 'pkg install perl  # diff-so-fancy'
+    echo 'pkg install ruby  # Jekyll'
+    echo 'pkg install termux-api  # pbcopy/pbpaste alias'
+end
+
 log 'Setup Git local configuration (manual intervention needed)'
 set git_config_local $HOME/.gitconfig.local
 if test -f $git_config_local
