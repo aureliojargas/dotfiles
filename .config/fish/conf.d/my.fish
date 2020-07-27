@@ -14,8 +14,13 @@ alias .....='cd ../../../..'
 alias l='ls -la'
 
 # Colors ON
-alias ls='command ls --color=auto'
-alias grep='command grep --color'
+# Use functions, not aliases: https://github.com/fish-shell/fish-shell/issues/6899
+function ls
+    command ls --color=auto $argv
+end
+function grep
+    command grep --color $argv
+end
 
 # Docker
 alias docker-gc='docker system prune'
