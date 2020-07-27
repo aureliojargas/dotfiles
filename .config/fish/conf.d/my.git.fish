@@ -50,9 +50,9 @@ end
 function git_replace # args: pattern replacement [use_regex]
     # Get replace at https://github.com/aureliojargas/replace
     if test (count $argv) -eq 3
-        git grep -P -I -l "$1" | xargs replace -i -f "$1" -t "$2" --regex
+        git grep -P -I -l $argv[1] | xargs replace -i -f $argv[1] -t $argv[2] --regex
     else
-        git grep -F -I -l "$1" | xargs replace -i -f "$1" -t "$2"
+        git grep -F -I -l $argv[1] | xargs replace -i -f $argv[1] -t $argv[2]
     end
 end
 
