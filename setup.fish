@@ -161,7 +161,9 @@ if is_macos
     create_symlink /usr/local/bin/ged $HOME/bin/ed
 
     log 'macOS: Install extra software'
-    echo Please run: brew install coreutils ed fish gnu-sed python shellcheck tig wget
+    echo Please run:
+    echo brew install coreutils ed fish gnu-sed python shellcheck tig wget
+    echo pip3 install --user black git-revise pylint
 end
 
 if is_termux
@@ -173,6 +175,7 @@ if is_termux
     echo 'pkg install perl  # diff-so-fancy'
     echo 'pkg install ruby  # Jekyll'
     echo 'pkg install termux-api  # pbcopy/pbpaste alias'
+    echo pip3 install black git-revise pylint
 end
 
 log 'Setup Git local configuration (manual intervention needed)'
