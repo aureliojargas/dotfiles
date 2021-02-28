@@ -13,6 +13,10 @@ function is_macos
     test (uname) = Darwin
 end
 
+function is_linux
+    test -f /etc/debian_version
+end
+
 function log
     set_color cyan
     echo "[$argv]"
@@ -175,6 +179,16 @@ if is_termux
     echo 'pkg install perl  # diff-so-fancy'
     echo 'pkg install ruby  # Jekyll'
     echo 'pkg install termux-api  # pbcopy/pbpaste alias'
+    echo pip3 install black git-revise pylint
+end
+
+if is_linux
+    log 'Linux: Install extra software'
+    echo Please run:
+    echo sudo apt update
+    echo sudo apt install ed make python3-pip tig
+    echo 'sudo apt install lynx  # funcoeszz'
+    echo 'sudo apt install ruby  # Jekyll'
     echo pip3 install black git-revise pylint
 end
 
