@@ -17,7 +17,7 @@ function add-to-path --description "Add dir to PATH (top or bottom)"
     set -l dir (string trim --right --char / $dir)
 
     if contains $dir $PATH
-        echo "$funcname: dir '$dir' is already in PATH, nothing to do"
+        # echo "$funcname: dir '$dir' is already in PATH, nothing to do"
         return 0
     end
 
