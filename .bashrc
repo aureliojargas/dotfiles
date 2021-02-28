@@ -13,6 +13,14 @@ add_to_path() {
     esac
 }
 
+is_termux() {
+    case "$HOME" in *termux*) true;; *) false;; esac
+}
+
+is_macos() {
+    test "$(uname)" = Darwin
+}
+
 # My dear ~/bin
 add_to_path top $HOME/bin
 
@@ -71,8 +79,6 @@ zzon() {
     source "$ZZPATH"
 }
 
-# macOS-specific settings
-test -r ~/.bashrc.osx && source $_
-
-# Termux-specific settings
-test -r ~/.bashrc.termux && source $_
+# OS-specific settings
+is_macos  && test -r ~/.bashrc.osx    && source $_
+is_termux && test -r ~/.bashrc.termux && source $_
