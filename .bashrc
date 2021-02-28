@@ -21,6 +21,10 @@ is_macos() {
     test "$(uname)" = Darwin
 }
 
+is_linux() {
+    test -f /etc/debian_version
+}
+
 # My dear ~/bin
 add_to_path top $HOME/bin
 
@@ -82,3 +86,4 @@ zzon() {
 # OS-specific settings
 is_macos  && test -r ~/.bashrc.osx    && source $_
 is_termux && test -r ~/.bashrc.termux && source $_
+is_linux  && test -r ~/.bashrc.linux  && source $_

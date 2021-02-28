@@ -118,6 +118,12 @@ if is_macos
         .config/fish/conf.d/my.osx.fish
 end
 
+if is_linux
+    set paths $paths \
+        .bashrc.linux \
+        .config/fish/conf.d/my.linux.fish
+end
+
 log 'Clone/update repository'
 if not test -d $dotfiles_dir
     mkdir -p (dirname $dotfiles_dir)
