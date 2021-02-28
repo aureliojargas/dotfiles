@@ -1,4 +1,8 @@
 function fish_prompt --description 'Write out the prompt'
+    # Quick hack to disable the fancy prompt and get a simple one
+    # echo '$ '
+    # return
+
     set -l last_pipestatus $pipestatus
 
     if not set -q __fish_git_prompt_show_informative_status
