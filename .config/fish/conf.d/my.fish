@@ -12,6 +12,10 @@ if status is-interactive
     # GNU ls: yellow folders, not blue
     set -x LS_COLORS 'di=33'
 
+    # Dear Python venv, please leave my prompt alone
+    # https://github.com/pypa/virtualenv/blob/adcf327/src/virtualenv/activation/fish/activate.fish#L80
+    set -x VIRTUAL_ENV_DISABLE_PROMPT 1
+
     # Lazy
     alias ..='cd ..'
     alias ...='cd ../..'

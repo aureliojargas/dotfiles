@@ -81,6 +81,13 @@ function fish_prompt --description 'Write out the prompt'
 
     printf '%s ' (fish_vcs_prompt)
 
+    # Show activated Python virtual env
+    if set -q VIRTUAL_ENV
+        set_color yellow
+        printf '(%s) ' (basename $VIRTUAL_ENV)
+        set_color normal
+    end
+
     set -l pipestatus_string (__fish_print_pipestatus "[" "] " "|" (set_color $fish_color_status) (set_color --bold $fish_color_status) $last_pipestatus)
     echo -n $pipestatus_string
     set_color normal
