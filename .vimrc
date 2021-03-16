@@ -56,7 +56,7 @@ au FileType html,css set tabstop=2 textwidth=0
 au FileType sh set textwidth=100
 
 " Python defaults
-au FileType python set textwidth=100
+au FileType python set textwidth=88  " black default
 au FileType python hi pythonString ctermfg=lightgreen
 au FileType python hi pythonRawString ctermfg=lightgreen
 
