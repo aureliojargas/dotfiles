@@ -46,7 +46,7 @@ if status is-interactive
         git fetch -p
         git branch --merged |
         cut -c3- |
-        grep -vEx "master|gh-pages" |
+        grep -vEx "main|master|gh-pages" |
         xargs -r git branch -d "$branch"
     end
 
