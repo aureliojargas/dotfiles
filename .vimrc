@@ -19,6 +19,10 @@ set laststatus=2
 " Options for a better search experience
 set incsearch hlsearch ignorecase smartcase magic
 
+" Colors for highlighted text (use NONE for transparent)
+highlight Visual ctermbg=Blue ctermfg=White
+highlight Search ctermbg=Yellow ctermfg=Black
+
 " Make tab completion more bash-like
 set wildmode=longest,list:full
 
