@@ -43,9 +43,8 @@ au BufReadPost * if line("'\"")|execute("normal `\"")|endif
 " Sample:  	   		foo bar    
 set list listchars=tab:\|·,trail:█,precedes:<,extends:>
 
-" Ctrl-s to save (and stay) in Insert mode (handy in mobile)
-inoremap <c-s> <c-o>:w<cr>
-noremap  <c-s> <c-o>:w<cr>
+" Autosave, always
+autocmd TextChanged,TextChangedI * silent write
 
 " YAML defaults
 au FileType yaml set tabstop=2
