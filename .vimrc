@@ -5,7 +5,10 @@ syntax on
 set encoding=utf-8
 
 " Fix common typos
-cab W w | cab Q q | cab Wq wq | cab WQ wq
+cabbrev W w
+cabbrev Q q
+cabbrev Wq wq
+cabbrev WQ wq
 
 " No beeps, just flashes
 set visualbell
@@ -37,7 +40,7 @@ set nojoinspaces
 
 " Remember cursor position, save command history
 set viminfo='10,\"30,:40,%,n~/.viminfo
-au BufReadPost * if line("'\"")|execute("normal `\"")|endif
+autocmd BufReadPost * if line("'\"")|execute("normal `\"")|endif
 
 " Highlight tabs and trailing spaces
 " Sample:  	   		foo bar    
@@ -47,21 +50,21 @@ set list listchars=tab:\|·,trail:█,precedes:<,extends:>
 autocmd TextChanged,TextChangedI * silent write
 
 " YAML defaults
-au FileType yaml set tabstop=2
+autocmd FileType yaml set tabstop=2
 
 " HTML/CSS defaults
-au FileType html,css set tabstop=2 textwidth=0
+autocmd FileType html,css set tabstop=2 textwidth=0
 
 " Bash defaults
-au FileType sh set textwidth=100
+autocmd FileType sh set textwidth=100
 
 " Python defaults
-au FileType python set textwidth=88  " black default
-au FileType python hi pythonString ctermfg=lightgreen
-au FileType python hi pythonRawString ctermfg=lightgreen
+autocmd FileType python set textwidth=88  " black default
+autocmd FileType python hi pythonString ctermfg=lightgreen
+autocmd FileType python hi pythonRawString ctermfg=lightgreen
 
 " txt2tags
-au BufNewFile,BufRead *.t2t set filetype=txt2tags
+autocmd BufNewFile,BufRead *.t2t set filetype=txt2tags
 
 " Git commit message limited to 72 columns
-au FileType gitcommit set textwidth=72
+autocmd FileType gitcommit set textwidth=72
