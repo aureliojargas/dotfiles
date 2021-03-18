@@ -24,6 +24,7 @@ set incsearch hlsearch ignorecase smartcase magic
 
 " Colors for highlighted text (use NONE for transparent)
 highlight Visual ctermbg=Blue ctermfg=White
+highlight MatchParen ctermbg=Blue ctermfg=White
 highlight Search ctermbg=Yellow ctermfg=Black
 
 " Make tab completion more bash-like
