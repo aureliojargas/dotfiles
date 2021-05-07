@@ -70,7 +70,7 @@ alias code-files='find "$PWD" -type f | grep -Fv /.git/'
 test -r ~/.gitbash && source ~/.gitbash
 
 # aurelio.net: Add path to Jekyll-related tools
-add_to_path bottom ~/.gem/ruby/2.3.0/bin
+add_to_path bottom ~/.gem/ruby/2.5.0/bin
 
 # Funções ZZ - https://funcoeszz.net
 zzon() {
