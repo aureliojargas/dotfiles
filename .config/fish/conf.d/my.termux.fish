@@ -7,4 +7,8 @@ if status is-interactive
     # Requirement: https://wiki.termux.com/wiki/Termux:API
     alias pbcopy=termux-clipboard-set
     alias pbpaste=termux-clipboard-get
+
+    # Default cursor is a non-blinking block. Change it to |
+    # https://www.reddit.com/r/termux/comments/d9rxeo/how_do_i_change_cursor/
+    printf '\e[6 q'
 end
