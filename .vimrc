@@ -69,3 +69,7 @@ autocmd BufNewFile,BufRead *.t2t set filetype=txt2tags
 
 " Git commit message limited to 72 columns
 autocmd FileType gitcommit set textwidth=72
+
+" Quickly move betwwen open tabs
+nnoremap H :tabprevious<CR>
+nnoremap L :tabnext<CR>
