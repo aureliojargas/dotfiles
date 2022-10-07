@@ -1,3 +1,6 @@
+# brew utils have precedence over macOS utils
+add-to-path top /opt/homebrew/bin
+
 # Use brew GNU utils (gsed, gcut, gwc, ...) without the g prefix
 add-to-path top /opt/homebrew/opt/coreutils/libexec/gnubin
 
