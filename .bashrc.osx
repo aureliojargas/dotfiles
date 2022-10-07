@@ -1,5 +1,5 @@
-# Use brew GNU utils by default, without the g prefix: gsed, gwc, ...
-add_to_path top /usr/local/opt/coreutils/libexec/gnubin
+# Use brew GNU utils (gsed, gcut, gwc, ...) without the g prefix
+add_to_path top /opt/homebrew/opt/coreutils/libexec/gnubin
 
 # Path to software installed with pip3 install --user
 add_to_path top ~/Library/Python/3.10/bin
