@@ -162,7 +162,7 @@ end
 
 if is_macos
     log "macOS: Add 'ed' symlink so GNU ed can be used as git core.editor"
-    create_symlink /usr/local/bin/ged $HOME/bin/ed
+    create_symlink /opt/homebrew/opt/ed/bin/ged $HOME/bin/ed
 
     log 'macOS: Install extra software'
     echo Please run:
