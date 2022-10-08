@@ -76,6 +76,9 @@ function fish_prompt --description 'Write out the prompt'
     # PWD
     set_color $color_cwd
     string repeat -n $COLUMNS –
+    set_color normal
+    echo -n (hostname)" "
+    set_color $color_cwd
     echo -n (prompt_pwd)
     set_color normal
 
