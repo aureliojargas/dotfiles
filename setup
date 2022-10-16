@@ -151,12 +151,6 @@ for path_ in $paths
     create_symlink $dotfiles_dir/$path_ $HOME/$path_
 end
 
-if is_github_codespace
-    log 'Remove autolinked symlinks from other platforms'
-    rm -vf ~/.bashrc.{osx,termux}
-    rm -vf ~/.config/fish/conf.d/my.{osx,termux}.fish
-end
-
 log 'Source dotfiles custom .bashrc from ~/.bashrc'
 insert_line "test -f $dotfiles_dir/.bashrc.my && source \$_" $HOME/.bashrc
 
