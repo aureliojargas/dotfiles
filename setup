@@ -215,10 +215,9 @@ end
 
 if is_github_codespace
     log 'GitHub Codespace: Install extra software'
-    echo Please run:
-    echo sudo apt update
-    echo sudo apt install ed shellcheck tig
-    echo pip3 install git-revise
+    # Directly installing instead of echoing. It's a container, bro!
+    sudo apt install --yes ed shellcheck tig
+    pip3 --disable-pip-version-check install git-revise
 end
 
 log 'Setup Git local configuration (manual intervention needed)'
