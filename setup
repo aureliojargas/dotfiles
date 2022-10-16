@@ -105,6 +105,7 @@ if is_github_codespace
 end
 
 set paths \
+    .aliases \
     .bashrc.my \
     .config/fish/conf.d/my.fish \
     .config/fish/functions/add-to-path.fish \
