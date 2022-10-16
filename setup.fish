@@ -104,11 +104,9 @@ end
 
 set paths \
     .config/fish/conf.d/my.fish \
-    .config/fish/conf.d/my.git.fish \
     .config/fish/functions/add-to-path.fish \
     .config/fish/functions/fish_prompt.fish \
     .gemrc \
-    .gitbash \
     .gitconfig \
     .inputrc \
     .screenrc \
