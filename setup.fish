@@ -103,6 +103,7 @@ if is_github_codespace
 end
 
 set paths \
+    .bashrc.my \
     .config/fish/conf.d/my.fish \
     .config/fish/functions/add-to-path.fish \
     .config/fish/functions/fish_prompt.fish \
@@ -150,7 +151,7 @@ if is_github_codespace
 end
 
 log 'Source dotfiles custom .bashrc from ~/.bashrc'
-insert_line "test -f $dotfiles_dir/.bashrc && source \$_" $HOME/.bashrc
+insert_line "test -f $dotfiles_dir/.bashrc.my && source \$_" $HOME/.bashrc
 
 log 'Download .git-prompt.sh for Bash'
 set git_prompt $HOME/.git-prompt.sh
