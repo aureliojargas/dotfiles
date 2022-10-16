@@ -223,7 +223,11 @@ end
 
 log 'Setup Git local configuration (manual intervention needed)'
 set git_config_local $HOME/.gitconfig.local
-if test -f $git_config_local
+if is_github_codespace
+    # GitHub Codespace sets GIT_COMMITTER_EMAIL and GIT_COMMITTER_NAME
+    # env variables to the correct values
+    already_done 'Skipped, git email/name already set by env vars.'
+else if test -f $git_config_local
     already_done
 else
     cp -v $dotfiles_dir/.gitconfig.local.template $git_config_local
