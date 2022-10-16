@@ -3,6 +3,10 @@
 # Setup all the dotfiles into a new machine.
 # May be run multiple times in the same machine.
 # Usage: ./setup
+#
+# GitHub Codespaces:
+# - This script is executed automatically in the container startup
+# - Logs: /workspaces/.codespaces/.persistedshare/creation.log
 
 set dotfiles_dir $HOME/k/a/dotfiles
 set user_bin $HOME/bin
