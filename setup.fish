@@ -15,6 +15,11 @@ end
 
 function is_linux
     test -f /etc/debian_version
+    and not is_github_codespace
+end
+
+function is_github_codespace
+    test $CODESPACES = true
 end
 
 function log
@@ -91,6 +96,12 @@ end
 
 #-----------------------------------------------------------------------
 
+if is_github_codespace
+    # This repo is always cloned in every codespace because I've enabled
+    # it in my user configuration: Automatically install dotfiles
+    set dotfiles_dir /workspaces/.codespaces/.persistedshare/dotfiles
+end
+
 set paths \
     .config/fish/conf.d/my.fish \
     .config/fish/conf.d/my.git.fish \
@@ -119,7 +130,10 @@ if is_macos
 end
 
 log 'Clone/update repository'
-if not test -d $dotfiles_dir
+if is_github_codespace
+    # dotfiles repo is always fresh in $dotfiles_dir
+    already_done
+else if not test -d $dotfiles_dir
     mkdir -p (dirname $dotfiles_dir)
     git clone git@github.com:aureliojargas/dotfiles.git $dotfiles_dir
 else
@@ -129,6 +143,12 @@ end
 log 'Create symlinks'
 for path_ in $paths
     create_symlink $dotfiles_dir/$path_ $HOME/$path_
+end
+
+if is_github_codespace
+    log 'Remove autolinked symlinks from other platforms'
+    rm -vf ~/.bashrc.{osx,termux}
+    rm -vf ~/.config/fish/conf.d/my.{osx,termux}.fish
 end
 
 log 'Source dotfiles custom .bashrc from ~/.bashrc'
@@ -190,6 +210,14 @@ if is_linux
     echo 'sudo apt install lynx  # funcoeszz'
     echo 'sudo apt install ruby  # Jekyll'
     echo pip3 install black git-revise pylint
+end
+
+if is_github_codespace
+    log 'GitHub Codespace: Install extra software'
+    echo Please run:
+    echo sudo apt update
+    echo sudo apt install ed shellcheck tig
+    echo pip3 install git-revise
 end
 
 log 'Setup Git local configuration (manual intervention needed)'
