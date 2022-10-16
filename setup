@@ -1,6 +1,8 @@
+#!/usr/bin/env fish
+#
 # Setup all the dotfiles into a new machine.
 # May be run multiple times in the same machine.
-# Usage: fish setup.fish
+# Usage: ./setup
 
 set dotfiles_dir $HOME/k/a/dotfiles
 set user_bin $HOME/bin
