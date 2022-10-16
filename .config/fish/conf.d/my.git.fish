@@ -3,32 +3,6 @@
 # https://github.com/fish-shell/fish-shell/issues/5394
 if status is-interactive
 
-    # ed: Show a ruler as reference to git commit 50/72 max width
-    alias ed-ruler='echo "-----------------------------------------------50|-------------------72|"'
-
-    # Lazy
-    alias ga='git add'
-    alias gap='git add -p'
-    alias gau='git add -u'
-    alias gb='git branch -va'
-    alias gc='ed-ruler; git commit'
-    alias gca='git_pre_commit; ed-ruler; git commit --amend'
-    alias gd='git diff'
-    alias gdc='git diff --cached'
-    alias gdw='GIT_PAGER= git diff' # wrap long lines
-    alias gg='git grep'
-    alias gl='git log -n 7 --oneline --reverse --date=short --pretty=format:"%Cblue%h%Creset %C(yellow)%ad%Creset %Cred%<(25,trunc)%ae%Creset %s"'
-    alias glg='git log --oneline --decorate --all --graph'
-    alias gpf='git push -f'
-    alias gpu='git push -u'
-    alias gr='git remote -v'
-    alias grp='git reset -p'
-    alias gs='git status'
-    alias gsd='git stash show -p stash@{0}'
-    alias gsl='git stash list'
-    alias gw='git show'
-    alias gws='git show --stat'
-
     function gcm
         git_pre_commit
         git commit -m "$argv"

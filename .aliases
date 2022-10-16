@@ -1,0 +1,58 @@
+# Aliases used by Bash and Fish (same syntax)
+
+# Lazy
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias l='ls -la'
+
+# Colors ON
+alias ls='ls --color=auto'
+alias grep='grep --color'  # in Termux: pkg install grep
+
+# Docker
+alias docker-gc='docker system prune'
+
+# JSON
+alias json-pp='python -m json.tool'
+
+# Web
+# curl -L https://raw.github.com/aureliojargas/css-grep/master/css-grep.txt > ~/.css.txt
+alias css='cat ~/.css.txt | grep -i'
+
+# VS Code
+# List of absolute paths for files in the current dir.
+# Use it from VS Code Terminal and click a path to open it in the editor.
+alias code-files='find "$PWD" -type f | grep -Fv /.git/'
+
+# Fish
+alias fish-my-config='find ~/.config/fish/ -not -type d'
+
+# Git aliases
+alias gg='git grep'
+alias gs='git status'
+alias gw='git show'
+alias gws='git show --stat'
+alias gsl='git stash list'
+alias gsd='git stash show -p stash@{0}'
+alias gd='git diff'
+alias gdw='GIT_PAGER= git diff'  # wrap long lines
+alias gdc='git diff --cached'
+alias ga='git add'
+alias gau='git add -u'
+alias gap='git add -p'
+alias grp='git reset -p'
+alias gc='ed-ruler; git commit'
+alias gca='git_pre_commit; ed-ruler; git commit --amend'
+alias gpf='git push -f'
+alias gpu='git push -u'
+alias gb='git branch -va'
+alias gr='git remote -v'
+alias gl='git log -n 7 --oneline --reverse --date=short --pretty=format:"%Cblue%h%Creset %C(yellow)%ad%Creset %Cred%<(25,trunc)%ae%Creset %s"'
+alias glg='git log --oneline --decorate --all --graph'
+
+# ed: Show a ruler as reference to git commit 50/72 max width
+alias ed-ruler="echo '-----------------------------------------------50|-------------------72|'"
+
+# vim: filetype=sh
