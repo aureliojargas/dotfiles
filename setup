@@ -195,17 +195,11 @@ else
     done Installed $fancy_diff
 end
 
+log 'Install extra software'
 if is_macos
-    log "macOS: Add 'ed' symlink so GNU ed can be used as git core.editor"
-    create_symlink /opt/homebrew/opt/ed/bin/ged $HOME/bin/ed
-
-    log 'macOS: Install extra software'
     brew_install coreutils ed fish gnu-sed python shellcheck tig wget
     pip_install --user black git-revise pylint
-end
-
-if is_termux
-    log 'Termux: Install extra software'
+else if is_termux
     pkg update
     pkg install file fish git make openssh python python2 tig vim
     pip_install black git-revise pylint
@@ -213,21 +207,20 @@ if is_termux
     echo 'pkg install perl  # diff-so-fancy'
     echo 'pkg install ruby  # Jekyll'
     echo 'pkg install termux-api  # pbcopy/pbpaste alias'
-end
-
-if is_linux
-    log 'Linux: Install extra software'
+else if is_linux
     sudo apt update
     apt_install ed make python3-pip tig
     pip_install black git-revise pylint
     echo 'sudo apt install lynx  # funcoeszz'
     echo 'sudo apt install ruby  # Jekyll'
-end
-
-if is_github_codespace
-    log 'GitHub Codespace: Install extra software'
+else if is_github_codespace
     apt_install ed shellcheck tig
     pip_install git-revise
+end
+
+if is_macos
+    log "macOS: Add 'ed' symlink so GNU ed can be used as git core.editor"
+    create_symlink /opt/homebrew/opt/ed/bin/ged $HOME/bin/ed
 end
 
 log 'Setup Git local configuration (manual intervention needed)'
