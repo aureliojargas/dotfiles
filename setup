@@ -13,6 +13,9 @@ set dotfiles_dir $PWD
 
 set user_bin $HOME/bin
 
+set git_prompt_url https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+set fancy_diff_url https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy
+
 function is_termux
     string match -q '*termux*' $HOME
 end
@@ -174,7 +177,7 @@ set git_prompt $HOME/.git-prompt.sh
 if test -f $git_prompt
     already_done
 else
-    curl --location https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh >$git_prompt
+    curl --location $git_prompt_url >$git_prompt
     done
 end
 
@@ -190,7 +193,7 @@ set fancy_diff $user_bin/diff-so-fancy
 if test -f $fancy_diff; and test -x $fancy_diff
     already_done
 else
-    curl -L https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy >$fancy_diff
+    curl -L $fancy_diff_url >$fancy_diff
     chmod +x $fancy_diff
     done Installed $fancy_diff
 end
