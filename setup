@@ -69,6 +69,24 @@ function failed
     set_color normal
 end
 
+function apt_install
+    set fish_trace 1
+    sudo apt --yes --quiet install --no-install-recommends $argv
+    set fish_trace 0
+end
+
+function brew_install
+    set fish_trace 1
+    brew install --quiet $argv
+    set fish_trace 0
+end
+
+function pip_install
+    set fish_trace 1
+    pip3 install --quiet --disable-pip-version-check $argv
+    set fish_trace 0
+end
+
 function insert_line -a line file
     if grep -F -x -q $line $file
         already_done
@@ -182,38 +200,34 @@ if is_macos
     create_symlink /opt/homebrew/opt/ed/bin/ged $HOME/bin/ed
 
     log 'macOS: Install extra software'
-    echo Please run:
-    echo brew install coreutils ed fish gnu-sed python shellcheck tig wget
-    echo pip3 install --user black git-revise pylint
+    brew_install coreutils ed fish gnu-sed python shellcheck tig wget
+    pip_install --user black git-revise pylint
 end
 
 if is_termux
     log 'Termux: Install extra software'
-    echo Please run:
-    echo pkg update
-    echo pkg install file fish git make openssh python python2 tig vim
+    pkg update
+    pkg install file fish git make openssh python python2 tig vim
+    pip_install black git-revise pylint
     echo 'pkg install lynx  # funcoeszz'
     echo 'pkg install perl  # diff-so-fancy'
     echo 'pkg install ruby  # Jekyll'
     echo 'pkg install termux-api  # pbcopy/pbpaste alias'
-    echo pip3 install black git-revise pylint
 end
 
 if is_linux
     log 'Linux: Install extra software'
-    echo Please run:
-    echo sudo apt update
-    echo sudo apt install ed make python3-pip tig
+    sudo apt update
+    apt_install ed make python3-pip tig
+    pip_install black git-revise pylint
     echo 'sudo apt install lynx  # funcoeszz'
     echo 'sudo apt install ruby  # Jekyll'
-    echo pip3 install black git-revise pylint
 end
 
 if is_github_codespace
     log 'GitHub Codespace: Install extra software'
-    # Directly installing instead of echoing. It's a container, bro!
-    sudo apt install --yes ed shellcheck tig
-    pip3 --disable-pip-version-check install git-revise
+    apt_install ed shellcheck tig
+    pip_install git-revise
 end
 
 log 'Setup Git local configuration (manual intervention needed)'
