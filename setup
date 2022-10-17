@@ -14,6 +14,7 @@ set dotfiles_dir $PWD
 set user_bin $HOME/bin
 
 set git_prompt_url https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+set git_completion_url https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 set fancy_diff_url https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy
 
 function is_termux
@@ -178,6 +179,15 @@ if test -f $git_prompt
     already_done
 else
     curl --location $git_prompt_url >$git_prompt
+    done
+end
+
+log 'Download .git-completion.bash for Bash'
+set git_completion $HOME/.git-completion.bash
+if test -f $git_completion
+    already_done
+else
+    curl --location $git_completion_url >$git_completion
     done
 end
 

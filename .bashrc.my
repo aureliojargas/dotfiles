@@ -49,6 +49,9 @@ add_to_path bottom ~/.gem/ruby/2.5.0/bin
 # ---------------------------------------------------------------------
 # Bash setup to improve Git usage
 
+# Completion
+source ~/.git-completion.bash
+
 # The Git Prompt magic alien device
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 type __git_ps1 > /dev/null 2>&1 || source ~/.git-prompt.sh
