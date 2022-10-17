@@ -17,6 +17,9 @@ alias docker-gc='docker system prune'
 # JSON
 alias json-pp='python -m json.tool'
 
+# Tmux: have a different session for each path
+alias temu='tmux new -A -D -s $PWD'
+
 # Web
 # curl -L https://raw.github.com/aureliojargas/css-grep/master/css-grep.txt > ~/.css.txt
 alias css='cat ~/.css.txt | grep -i'
