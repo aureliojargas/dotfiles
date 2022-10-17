@@ -166,7 +166,7 @@ for path_ in $paths
     create_symlink $dotfiles_dir/$path_ $HOME/$path_
 end
 
-log 'Source dotfiles custom .bashrc from ~/.bashrc'
+log 'Source dotfiles custom .bashrc.my from ~/.bashrc'
 insert_line "test -f $dotfiles_dir/.bashrc.my && source \$_" $HOME/.bashrc
 
 log 'Download .git-prompt.sh for Bash'
