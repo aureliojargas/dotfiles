@@ -25,7 +25,7 @@ function is_linux
 end
 
 function is_github_codespace
-    test $CODESPACES = true
+    test "$CODESPACES" = true
 end
 
 function log
