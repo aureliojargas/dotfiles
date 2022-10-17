@@ -69,22 +69,22 @@ function failed
     set_color normal
 end
 
-function apt_install
+function run
     set fish_trace 1
-    sudo apt --yes --quiet install --no-install-recommends $argv
+    $argv
     set fish_trace 0
+end
+
+function apt_install
+    run sudo apt --yes --quiet install --no-install-recommends $argv
 end
 
 function brew_install
-    set fish_trace 1
-    brew install --quiet $argv
-    set fish_trace 0
+    run brew install --quiet $argv
 end
 
 function pip_install
-    set fish_trace 1
-    pip3 install --quiet --disable-pip-version-check $argv
-    set fish_trace 0
+    run pip3 install --quiet --disable-pip-version-check $argv
 end
 
 function insert_line -a line file
