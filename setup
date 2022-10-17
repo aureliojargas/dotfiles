@@ -141,17 +141,6 @@ if is_macos
         .config/fish/conf.d/my.osx.fish
 end
 
-log 'Clone/update repository'
-if is_github_codespace
-    # dotfiles repo is always fresh in $dotfiles_dir
-    already_done
-else if not test -d $dotfiles_dir
-    mkdir -p (dirname $dotfiles_dir)
-    git clone git@github.com:aureliojargas/dotfiles.git $dotfiles_dir
-else
-    git -C $dotfiles_dir pull
-end
-
 log 'Create symlinks'
 for path_ in $paths
     create_symlink $dotfiles_dir/$path_ $HOME/$path_
