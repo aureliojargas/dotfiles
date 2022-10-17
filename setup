@@ -102,6 +102,12 @@ end
 
 #-----------------------------------------------------------------------
 
+log 'Detecting the platform'
+is_termux; and echo Termux
+is_macos; and echo macOS
+is_linux; and echo Linux
+is_github_codespace; and echo GitHub Codespace
+
 if is_github_codespace
     # This repo is always cloned in every codespace because I've enabled
     # it in my user configuration: Automatically install dotfiles
