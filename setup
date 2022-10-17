@@ -8,7 +8,9 @@
 # - This script is executed automatically in the container startup
 # - Logs: /workspaces/.codespaces/.persistedshare/creation.log
 
-set dotfiles_dir $HOME/k/a/dotfiles
+# You should always run this script from the repository root
+set dotfiles_dir $PWD
+
 set user_bin $HOME/bin
 
 function is_termux
