@@ -26,6 +26,15 @@
     # https://git-scm.com/docs/git-config.html#git-config-pushdefault
     default = current  # default in Git 1.x
 
+# https://github.com/dandavison/delta
+# https://github.com/dandavison/delta/issues/137 (whitespace issue)
+[delta]
+    line-numbers = true
+    # syntax-theme = Monokai Extended
+    # syntax-theme = ansi-dark
+    # syntax-theme = zenburn
+    syntax-theme = GitHub
+
 # Autoremove already deleted remote branches
 [remote "origin"]
     prune = true
