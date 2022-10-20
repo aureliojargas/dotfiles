@@ -221,12 +221,13 @@ else if is_termux
     echo 'pkg install ruby  # Jekyll'
     echo 'pkg install termux-api  # pbcopy/pbpaste alias'
 else if is_linux
-    sudo apt update
+    sudo apt --quiet update
     apt_install ed make python3-pip tig
     pip_install black git-revise pylint
     echo 'sudo apt install lynx  # funcoeszz'
     echo 'sudo apt install ruby  # Jekyll'
 else if is_github_codespace
+    sudo apt --quiet update
     apt_install ed shellcheck tig
     pip_install git-revise
 end
