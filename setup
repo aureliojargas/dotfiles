@@ -228,8 +228,7 @@ else if is_linux
     echo 'sudo apt install ruby  # Jekyll'
 else if is_github_codespace
     sudo apt --quiet update
-    apt_install ed shellcheck tig
-    pip_install git-revise
+    apt_install ed git-revise shellcheck tig
 end
 
 if is_macos
