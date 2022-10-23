@@ -227,6 +227,10 @@ else if is_linux
     echo 'sudo apt install lynx  # funcoeszz'
     echo 'sudo apt install ruby  # Jekyll'
 else if is_github_codespace
+    # Install the missing software just in case we're running on the
+    # default GitHub Codespaces container. This is a noop in my personal
+    # devcontainer (https://github.com/aureliojargas/devcontainer) since
+    # those are already installed there.
     sudo apt --quiet update
     apt_install ed git-revise shellcheck tig
 end
