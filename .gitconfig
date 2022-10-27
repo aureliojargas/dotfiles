@@ -67,3 +67,5 @@
 #
 # Rename a file in history
 # git rebase -i, edit the commit that added the file, rename it, amend.
+[url "git@github.com:"]
+	insteadOf = https://github.com/
