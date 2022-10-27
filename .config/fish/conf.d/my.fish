@@ -1,9 +1,6 @@
 # Add my dear ~/bin to PATH
 add-to-path top ~/bin
 
-# aurelio.net: Add path to Jekyll-related tools
-add-to-path bottom ~/.gem/ruby/2.5.0/bin
-
 # https://github.com/fish-shell/fish-shell/issues/5394
 if status is-interactive
 

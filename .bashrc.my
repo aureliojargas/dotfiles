@@ -43,9 +43,6 @@ export LS_COLORS='di=33'
 # Load all the aliases
 test -r ~/.aliases && source $_
 
-# aurelio.net: Add path to Jekyll-related tools
-add_to_path bottom ~/.gem/ruby/2.5.0/bin
-
 # ---------------------------------------------------------------------
 # Bash setup to improve Git usage
 
