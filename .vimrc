@@ -67,6 +67,10 @@ autocmd FileType python hi pythonRawString ctermfg=lightgreen
 " txt2tags
 autocmd BufNewFile,BufRead *.t2t set filetype=txt2tags
 
+" Funções ZZ (tab-indented)
+autocmd BufNewFile,BufRead */funcoeszz/{*.sh,testador/run}
+    \ set noexpandtab textwidth=72
+
 " Git commit message limited to 72 columns
 autocmd FileType gitcommit set textwidth=72
 
