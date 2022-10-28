@@ -5,6 +5,7 @@ add_to_path top /opt/homebrew/bin
 add_to_path top /opt/homebrew/opt/coreutils/libexec/gnubin
 
 # Path to software installed with pip3 install --user
+add_to_path top ~/Library/Python/3.9/bin
 add_to_path top ~/Library/Python/3.10/bin
 
 # txt2regex: use brew gettext binaries
