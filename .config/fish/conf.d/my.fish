@@ -82,7 +82,8 @@ if status is-interactive
         set -l origin (git remote get-url origin)
 
         set -l perso_author "verde@"
-        set -l perso_origin "github.com:aureliojargas/"
+        set -l perso_origin "github.com?aureliojargas/"
+        # In previous line, ? matches / (https) and : (ssh)
 
         set -l is_perso_author (string match -- "*$perso_author*" $author)
         set -l is_perso_origin (string match -- "*$perso_origin*" $origin)

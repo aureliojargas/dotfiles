@@ -122,7 +122,8 @@ git_pre_commit() {
     local origin=$(git remote get-url origin)
 
     local perso_author="verde@"
-    local perso_origin="github.com:aureliojargas/"
+    local perso_origin="github.com?aureliojargas/"
+    # In previous line, ? matches / (https) and : (ssh)
 
     # if empty, it's true (odd, I know, but easier to handle)
     local is_perso_author=${author##*$perso_author*}
