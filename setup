@@ -16,6 +16,7 @@ set user_bin $HOME/bin
 set git_prompt_url https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 set git_completion_url https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 set fancy_diff_url https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy
+set replace_url https://raw.githubusercontent.com/aureliojargas/replace/main/replace.py
 
 function is_termux
     string match -q '*termux*' $HOME
@@ -206,6 +207,16 @@ else
     curl --location --silent $fancy_diff_url >$fancy_diff
     chmod +x $fancy_diff
     done Installed $fancy_diff
+end
+
+log 'Install the replace script'
+set replace_path $user_bin/replace
+if command --search --quiet replace
+    already_done
+else
+    curl --location --silent $replace_url >$replace_path
+    chmod +x $replace_path
+    done Installed $replace_path
 end
 
 log 'Install extra software'
