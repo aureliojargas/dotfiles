@@ -44,9 +44,9 @@ if status is-interactive
     function git_cleanup
         git fetch -p
         git branch --merged |
-        cut -c3- |
-        grep -vEx "main|master|gh-pages" |
-        xargs -r git branch -d "$branch"
+            cut -c3- |
+            grep -vEx "main|master|gh-pages" |
+            xargs -r git branch -d "$branch"
     end
 
     function git_replace # args: pattern replacement [use_regex]
@@ -73,7 +73,7 @@ if status is-interactive
         for branch in $branches
             echo "$branch:"
             git log --oneline --date=short --pretty=format:"%h %ad [%ae] %s" "$branch" |
-            grep -v -F "[$email]"
+                grep -v -F "[$email]"
         end
     end
 
