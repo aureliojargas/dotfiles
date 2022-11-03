@@ -25,6 +25,12 @@ if status is-interactive
         command grep --color $argv
     end
 
+    # I always forget those commands
+    function ssh-no-password
+        eval (ssh-agent -c)
+        ssh-add ~/.ssh/id_rsa
+    end
+
     # -----------------------------------------------------------------
     # Git-related stuff
 

@@ -43,6 +43,12 @@ export LS_COLORS='di=33'
 # Load all the aliases
 test -r ~/.aliases && source $_
 
+# I always forget those commands
+ssh-no-password() {
+    eval $(ssh-agent)
+    ssh-add ~/.ssh/id_rsa
+}
+
 # ---------------------------------------------------------------------
 # Bash setup to improve Git usage
 
