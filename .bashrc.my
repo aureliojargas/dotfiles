@@ -154,3 +154,5 @@ zzon() {
 # OS-specific settings
 is_macos  && test -r ~/.bashrc.osx    && source $_
 is_termux && test -r ~/.bashrc.termux && source $_
+
+# vim: filetype=sh
