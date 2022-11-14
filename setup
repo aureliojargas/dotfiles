@@ -263,3 +263,5 @@ else
     cp -v $dotfiles_dir/.gitconfig.local.template $git_config_local
     echo Please edit $git_config_local
 end
+
+# vim: filetype=fish
