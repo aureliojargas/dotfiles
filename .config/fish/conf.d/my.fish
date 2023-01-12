@@ -1,5 +1,5 @@
 # Add my dear ~/bin to PATH
-add-to-path top ~/bin
+fish_add_path ~/bin
 
 # https://github.com/fish-shell/fish-shell/issues/5394
 if status is-interactive
