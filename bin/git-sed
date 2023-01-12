@@ -1,0 +1,22 @@
+#!/usr/bin/env fish
+# Get replace at https://github.com/aureliojargas/replace
+
+function usage
+    set -l script_name (basename (status -f))
+    echo "Usage: $script_name pattern replacement [--regex]"
+end
+
+switch (count $argv)
+    case 2
+        set match_mode -F
+    case 3
+        set match_mode -P
+        set regex_mode --regex
+    case '*'
+        usage
+        exit 1
+end
+
+git grep $match_mode -I -l $argv[1] | while read path
+    replace -i -f $argv[1] -t $argv[2] $regex_mode $path
+end

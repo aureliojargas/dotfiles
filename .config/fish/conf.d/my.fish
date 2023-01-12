@@ -55,15 +55,6 @@ if status is-interactive
             xargs -r git branch -d "$branch"
     end
 
-    function git_replace # args: pattern replacement [use_regex]
-        # Get replace at https://github.com/aureliojargas/replace
-        if test (count $argv) -eq 3
-            git grep -P -I -l $argv[1] | xargs replace -i -f $argv[1] -t $argv[2] --regex
-        else
-            git grep -F -I -l $argv[1] | xargs replace -i -f $argv[1] -t $argv[2]
-        end
-    end
-
     function git_pull_forced
         # I'm assuming 10 commits ago the local is sync'ed with the remote
         git fetch

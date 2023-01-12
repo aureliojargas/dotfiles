@@ -92,15 +92,6 @@ git_cleanup() {
             git branch -d "$branch"
         done
 }
-git_replace() {  # args: pattern replacement [use_regex]
-    # Get replace at https://github.com/aureliojargas/replace
-    if test -n "$3"
-    then
-        git grep -P -I -l "$1" | xargs replace -i -f "$1" -t "$2" --regex
-    else
-        git grep -F -I -l "$1" | xargs replace -i -f "$1" -t "$2"
-    fi
-}
 git_pull_forced() {
     # I'm assuming 10 commits ago the local is sync'ed with the remote
     git fetch
