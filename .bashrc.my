@@ -92,12 +92,6 @@ git_cleanup() {
             git branch -d "$branch"
         done
 }
-git_pull_forced() {
-    # I'm assuming 10 commits ago the local is sync'ed with the remote
-    git fetch
-    git reset --hard HEAD~10
-    git merge FETCH_HEAD
-}
 
 # Funções ZZ - https://funcoeszz.net
 zzon() {

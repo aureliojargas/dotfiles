@@ -54,11 +54,4 @@ if status is-interactive
             grep -vEx "main|master|gh-pages" |
             xargs -r git branch -d "$branch"
     end
-
-    function git_pull_forced
-        # I'm assuming 10 commits ago the local is sync'ed with the remote
-        git fetch
-        git reset --hard HEAD~10
-        git merge FETCH_HEAD
-    end
 end
