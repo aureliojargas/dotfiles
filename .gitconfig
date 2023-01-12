@@ -1,6 +1,8 @@
-# http://documentup.com/skwp/git-workflows-book#appendix-a---the-gitconfig
+# https://git-scm.com/docs/git-config#_configuration_file
 
 [alias]
+    # https://git.wiki.kernel.org/index.php/Aliases
+
     co = checkout
     cp = cherry-pick
     g = grep --extended-regexp --break --heading --line-number --ignore-case --show-function
@@ -8,6 +10,18 @@
     diffw = diff -w --ignore-blank-lines
     unstage = reset HEAD
     uncommit = reset --soft HEAD^
+    log-graph = log --oneline --decorate --all --graph
+
+    commit-message = !sh -c 'git-pre-commit && echo git commit -m \"$*\"' -
+
+    # log4: hash, date, email, summary
+    # log3: hash, date, summary
+    # log2: hash, summary
+    log4 = log -n 7 --oneline --reverse --date=short \
+        --pretty=format:'%Cblue%h%Creset %C(yellow)%ad%Creset %Cred%<(22,trunc)%ae%Creset %s'
+    log3 = !sh -c 'git log4 --color=always | tr -s \" \" | cut -d \" \" -f 1,2,4-'
+    log2 = !sh -c 'git log3 | cut -d \" \" -f 1,4-'
+
 [core]
     editor = ed --loose-exit-status --prompt 'ed> '  # ed challenge :)
     pager = diff-so-fancy | less --tabs=4 -RFX  # word-highlight diffs

@@ -30,20 +30,4 @@ if status is-interactive
         eval (ssh-agent -c)
         ssh-add ~/.ssh/id_rsa
     end
-
-    # -----------------------------------------------------------------
-    # Git-related stuff
-
-    function gcm
-        git-pre-commit
-        git commit -m "$argv"
-    end
-
-    function gl2 # Show hash, summary
-        gl --color=always $argv | tr -s ' ' | cut -d ' ' -f 1,4-
-    end
-
-    function gl3 # Show hash, date, summary
-        gl --color=always $argv | tr -s ' ' | cut -d ' ' -f 1,2,4-
-    end
 end

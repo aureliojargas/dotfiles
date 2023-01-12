@@ -48,12 +48,14 @@ alias gap='git add -p'
 alias grp='git reset -p'
 alias gc='ed-ruler; git commit'
 alias gca='git-pre-commit; ed-ruler; git commit --amend'
+alias gcm='git commit-message'
 alias gpf='git push -f'
 alias gpu='git push -u'
 alias gb='git branch -va'
 alias gr='git remote -v'
-alias gl='git log -n 7 --oneline --reverse --date=short --pretty=format:"%Cblue%h%Creset %C(yellow)%ad%Creset %Cred%<(25,trunc)%ae%Creset %s"'
-alias glg='git log --oneline --decorate --all --graph'
+alias gl='git log4'
+alias gl2='git log3'
+alias gl3='git log2'
 
 # ed: Show a ruler as reference to git commit 50/72 max width
 alias ed-ruler="echo '-----------------------------------------------50|-------------------72|'"

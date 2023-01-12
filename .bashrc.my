@@ -70,18 +70,6 @@ PROMPT_COMMAND='__git_ps1 "\[\e[m\h|\e[32;1m\]\w\[\e[m\]" "$(z=$?;test $z -gt 0 
 # Prompt: hostname|dir|git-branch|$?| _
 
 
-# Git functions
-gcm() {
-    git-pre-commit
-    git commit -m "$*"
-}
-gl2() {  # Show hash, summary
-    gl --color=always "$@" | tr -s ' ' | cut -d ' ' -f 1,4-
-}
-gl3() {  # Show hash, date, summary
-    gl --color=always "$@" | tr -s ' ' | cut -d ' ' -f 1,2,4-
-}
-
 # Funções ZZ - https://funcoeszz.net
 zzon() {
     export ZZPATH="$HOME/k/a/funcoeszz/funcoeszz"
