@@ -81,17 +81,6 @@ gl2() {  # Show hash, summary
 gl3() {  # Show hash, date, summary
     gl --color=always "$@" | tr -s ' ' | cut -d ' ' -f 1,2,4-
 }
-git_cleanup() {
-    local branch
-    git fetch -p
-    git branch --merged |
-        cut -c3- |
-        grep -vEx "main|master|gh-pages" |
-        while read -r branch  # xargs -r not supported in BSD :(
-        do
-            git branch -d "$branch"
-        done
-}
 
 # Funções ZZ - https://funcoeszz.net
 zzon() {

@@ -46,12 +46,4 @@ if status is-interactive
     function gl3 # Show hash, date, summary
         gl --color=always $argv | tr -s ' ' | cut -d ' ' -f 1,2,4-
     end
-
-    function git_cleanup
-        git fetch -p
-        git branch --merged |
-            cut -c3- |
-            grep -vEx "main|master|gh-pages" |
-            xargs -r git branch -d "$branch"
-    end
 end

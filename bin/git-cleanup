@@ -1,0 +1,20 @@
+#!/usr/bin/env fish
+
+# Remove remote-tracking references that no longer exist on the remote
+git fetch --prune
+
+# Remove local branches that were already merged
+git branch --merged |
+
+    # Always keep the current branch
+    grep -v '^\* ' |
+
+    # Remove left padding
+    cut -c 3- |
+
+    # Always keep these branches
+    grep -v -x -e main -e master -e gh-pages |
+
+    while read branch
+        git branch --delete $branch
+    end
