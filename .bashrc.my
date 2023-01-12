@@ -72,7 +72,7 @@ PROMPT_COMMAND='__git_ps1 "\[\e[m\h|\e[32;1m\]\w\[\e[m\]" "$(z=$?;test $z -gt 0 
 
 # Git functions
 gcm() {
-    git_pre_commit
+    git-pre-commit
     git commit -m "$*"
 }
 gl2() {  # Show hash, summary
@@ -122,26 +122,6 @@ git_check_author() {
         git log --oneline --date=short --pretty=format:"%h %ad [%ae] %s" "$branch" |
             grep -v -F "[$email]"
     done
-}
-git_pre_commit() {
-    local author=$(git config user.email)
-    local origin=$(git remote get-url origin)
-
-    local perso_author="verde@"
-    local perso_origin="github.com?aureliojargas/"
-    # In previous line, ? matches / (https) and : (ssh)
-
-    # if empty, it's true (odd, I know, but easier to handle)
-    local is_perso_author=${author##*$perso_author*}
-    local is_perso_origin=${origin##*$perso_origin*}
-
-    # If author or repo are personal, both must be personal
-    if { test -z "$is_perso_author" && ! test -z "$is_perso_origin"; } ||
-       { test -z "$is_perso_origin" && ! test -z "$is_perso_author"; }
-    then
-        echo "WARNING: using $author in $origin. Is that ok?"
-        read -r
-    fi
 }
 
 # Funções ZZ - https://funcoeszz.net

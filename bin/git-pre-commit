@@ -1,0 +1,24 @@
+#!/usr/bin/env fish
+# To be run before attempting to create a new commit.
+# The idea here is avoiding committing personal stuff with work
+# credentials and vice versa.
+
+set author (git config user.email)
+set origin (git remote get-url origin)
+
+set perso_author "verde@"
+set perso_origin "github.com?aureliojargas/"
+# In previous line, ? matches / (https) and : (ssh)
+
+set is_perso_author (string match -- "*$perso_author*" $author)
+set is_perso_origin (string match -- "*$perso_origin*" $origin)
+
+# If author or repo are personal, both must be personal
+if test -n "$is_perso_author"
+    and test -n "$is_perso_origin"
+    :
+else if test -n "$is_perso_author"
+    or test -n "$is_perso_origin"
+    echo "WARNING: using $author in $origin. Is that ok?"
+    read
+end

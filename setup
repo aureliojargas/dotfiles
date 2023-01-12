@@ -199,6 +199,9 @@ else
     mkdir -p -v $user_bin
 end
 
+log 'Install my scripts in ~/bin'
+cp -f -v bin/* ~/bin
+
 log 'Install diff-so-fancy in user bin'
 set fancy_diff $user_bin/diff-so-fancy
 if test -f $fancy_diff; and test -x $fancy_diff

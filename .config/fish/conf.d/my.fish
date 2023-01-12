@@ -35,7 +35,7 @@ if status is-interactive
     # Git-related stuff
 
     function gcm
-        git_pre_commit
+        git-pre-commit
         git commit -m "$argv"
     end
 
@@ -80,28 +80,6 @@ if status is-interactive
             echo "$branch:"
             git log --oneline --date=short --pretty=format:"%h %ad [%ae] %s" "$branch" |
                 grep -v -F "[$email]"
-        end
-    end
-
-    function git_pre_commit
-        set -l author (git config user.email)
-        set -l origin (git remote get-url origin)
-
-        set -l perso_author "verde@"
-        set -l perso_origin "github.com?aureliojargas/"
-        # In previous line, ? matches / (https) and : (ssh)
-
-        set -l is_perso_author (string match -- "*$perso_author*" $author)
-        set -l is_perso_origin (string match -- "*$perso_origin*" $origin)
-
-        # If author or repo are personal, both must be personal
-        if test -n "$is_perso_author"
-            and test -n "$is_perso_origin"
-            :
-        else if test -n "$is_perso_author"
-            or test -n "$is_perso_origin"
-            echo "WARNING: using $author in $origin. Is that ok?"
-            read
         end
     end
 end
