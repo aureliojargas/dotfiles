@@ -107,22 +107,6 @@ git_pull_forced() {
     git reset --hard HEAD~10
     git merge FETCH_HEAD
 }
-git_check_author() {
-    # List commits from all branches whose author email is not $1
-    set -u
-    local email="$1"
-    local branch
-    local branches
-
-    branches=$(git branch -a | grep -v ' -> ' | cut -c3-)  # local+remote
-
-    for branch in $branches
-    do
-        echo "$branch:"
-        git log --oneline --date=short --pretty=format:"%h %ad [%ae] %s" "$branch" |
-            grep -v -F "[$email]"
-    done
-}
 
 # Funções ZZ - https://funcoeszz.net
 zzon() {

@@ -70,16 +70,4 @@ if status is-interactive
         git reset --hard HEAD~10
         git merge FETCH_HEAD
     end
-
-    function git_check_author # args: email
-        # List commits from all branches whose author email is not $email
-        set -l email $argv[1]
-        set -l branches (git branch -a | grep -v ' -> ' | cut -c3-) # local+remote
-
-        for branch in $branches
-            echo "$branch:"
-            git log --oneline --date=short --pretty=format:"%h %ad [%ae] %s" "$branch" |
-                grep -v -F "[$email]"
-        end
-    end
 end
