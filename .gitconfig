@@ -24,6 +24,8 @@
 
     log-graph = log --oneline --decorate --all --graph
 
+    new = log4 -n 999 @{1}..@{0}  # What's new since the last git pull?
+
     uncommit = reset --soft HEAD^
 
     unstage = reset HEAD
