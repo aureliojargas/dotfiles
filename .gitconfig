@@ -1,44 +1,48 @@
 # https://git-scm.com/docs/git-config#_configuration_file
 
-[alias]
-    # https://git.wiki.kernel.org/index.php/Aliases
+[alias]  # https://git.wiki.kernel.org/index.php/Aliases
 
     co = checkout
-    cp = cherry-pick
-    g = grep --extended-regexp --break --heading --line-number --ignore-case --show-function
-    worddiff = diff --color-words
-    diffw = diff -w --ignore-blank-lines
-    unstage = reset HEAD
-    uncommit = reset --soft HEAD^
-    log-graph = log --oneline --decorate --all --graph
 
     commit-message = !sh -c 'git-pre-commit && echo git commit -m \"$*\"' -
 
-    # log4: hash, date, email, summary
-    # log3: hash, date, summary
-    # log2: hash, summary
+    cp = cherry-pick
+
+    diffw = diff -w --ignore-blank-lines
+
+    g = grep --extended-regexp --break --heading --line-number --ignore-case --show-function
+
+    # hash, date, email, summary
     log4 = log -n 7 --oneline --reverse --date=short \
         --pretty=format:'%Cblue%h%Creset %C(yellow)%ad%Creset %Cred%<(22,trunc)%ae%Creset %s'
+
+    # hash, date, summary
     log3 = !sh -c 'git log4 --color=always | tr -s \" \" | cut -d \" \" -f 1,2,4-'
+
+    # hash, summary
     log2 = !sh -c 'git log3 | cut -d \" \" -f 1,4-'
+
+    log-graph = log --oneline --decorate --all --graph
+
+    uncommit = reset --soft HEAD^
+
+    unstage = reset HEAD
+
+    worddiff = diff --color-words
+
+[commit]
+    status = false  # no `git status` output in commit template
 
 [core]
     editor = ed --loose-exit-status --prompt 'ed> '  # ed challenge :)
     pager = diff-so-fancy | less --tabs=4 -RFX  # word-highlight diffs
     excludesfile = ~/.gitignore_global
+
 [color]
     ui = auto
+
 [color "diff"]
     meta = magenta
-[help]
-    autocorrect = 1    # fix typos
-[commit]
-    status = false     # no `git status` output in commit template
-[pull]
-    ff = only
-[push]
-    # https://git-scm.com/docs/git-config.html#git-config-pushdefault
-    default = current  # default in Git 1.x
 
 # https://github.com/dandavison/delta
 # https://github.com/dandavison/delta/issues/137 (whitespace issue)
@@ -49,11 +53,21 @@
     # syntax-theme = zenburn
     syntax-theme = GitHub
 
-# Autoremove already deleted remote branches
+[help]
+    autocorrect = 1  # fix typos
+
+[pull]
+    ff = only
+
+[push]
+    # https://git-scm.com/docs/git-config.html#git-config-pushdefault
+    default = current  # default in Git 1.x
+
 [remote "origin"]
-    prune = true
+    prune = true  # Autoremove already deleted remote branches
+
 [remote "upstream"]
-    prune = true
+    prune = true  # Autoremove already deleted remote branches
 
 [include]
     # Use separate file for username, credentials, etc
