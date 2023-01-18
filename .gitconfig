@@ -4,7 +4,7 @@
 
     co = checkout
 
-    commit-message = !sh -c 'git-pre-commit && echo git commit -m \"$*\"' -
+    commit-message = !sh -c 'git-pre-commit && git commit -m \"$*\"' -
 
     cp = cherry-pick
 
