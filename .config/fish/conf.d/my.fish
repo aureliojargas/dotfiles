@@ -30,4 +30,14 @@ if status is-interactive
         eval (ssh-agent -c)
         ssh-add ~/.ssh/id_rsa
     end
+
+    function venv
+        # ~/.virtualenvs/ is autodetected by VS Code
+        set path ~/.virtualenvs/(basename $PWD)
+        if not test -d $path
+            echo "Creating venv at $path"
+            python3 -m venv $path
+        end
+        echo "source $path/bin/activate.fish"
+    end
 end
