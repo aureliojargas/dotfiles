@@ -87,7 +87,7 @@ function fish_prompt --description 'Write out the prompt'
     # Show activated Python virtual env
     if set -q VIRTUAL_ENV
         set_color yellow
-        printf '(%s) ' (basename $VIRTUAL_ENV)
+        printf 'venv '
         set_color normal
     end
 
