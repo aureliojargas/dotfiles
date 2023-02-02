@@ -199,7 +199,9 @@ else
 end
 
 log 'Install my scripts in ~/bin'
-cp -f -v bin/* ~/bin
+for path_ in bin/*
+    create_symlink $dotfiles_dir/$path_ $HOME/$path_
+end
 
 log 'Install diff-so-fancy in user bin'
 set fancy_diff $user_bin/diff-so-fancy
