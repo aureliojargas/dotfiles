@@ -3,11 +3,11 @@
 # https://stackoverflow.com/a/5737794
 set dirty_tree (git status --porcelain)
 
-test -n $dirty_tree; and git stash --include-untracked
+test -n "$dirty_tree"; and git stash --include-untracked
 
 # I'm assuming 10 commits ago the local copy sync'ed with the remote
 git fetch
 git reset --hard HEAD~10
 git merge FETCH_HEAD
 
-test -n $dirty_tree; and git stash pop
+test -n "$dirty_tree"; and git stash pop
