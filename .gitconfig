@@ -36,7 +36,7 @@
     status = false  # no `git status` output in commit template
 
 [core]
-    editor = ed --loose-exit-status --prompt 'ed> '  # ed challenge :)
+    editor = ed --loose-exit-status  # ed challenge :)
     pager = diff-so-fancy | less --tabs=4 -RFX  # word-highlight diffs
     excludesfile = ~/.gitignore_global
 
