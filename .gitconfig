@@ -12,6 +12,8 @@
 
     g = grep --extended-regexp --break --heading --line-number --ignore-case --show-function
 
+    grep-filename = !sh -c 'git ls-files | grep --color=always $@' -
+
     # hash, date, email, summary
     log4 = log -n 7 --oneline --reverse --date=short \
         --pretty=format:'%Cblue%h%Creset %C(yellow)%ad%Creset %Cred%<(22,trunc)%ae%Creset %s'
