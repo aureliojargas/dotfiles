@@ -33,7 +33,7 @@ alias code-files='find "$PWD" -type f | grep -Fv /.git/'
 alias fish-my-config='find ~/.config/fish/ -not -type d'
 
 # Git aliases
-alias gg='git grep'
+alias gg='git grep --line-number'
 alias gs='git status'
 alias gw='git show'
 alias gws='git show --stat'
