@@ -150,6 +150,7 @@ set paths \
     .bashrc.my \
     .config/fish/conf.d/my.fish \
     .config/fish/functions/fish_prompt.fish \
+    .config/micro/settings.json \
     .gemrc \
     .gitconfig \
     .inputrc \
@@ -174,6 +175,12 @@ end
 log 'Create symlinks'
 for path_ in $paths
     create_symlink $dotfiles_dir/$path_ $HOME/$path_
+end
+
+if is_chromeos
+    create_symlink \
+        $dotfiles_dir/.config/micro/bindings.chromeos.json \
+        $HOME/.config/micro/bindings.json
 end
 
 log 'Source dotfiles custom .bashrc.my from ~/.bashrc'

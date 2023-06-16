@@ -1,0 +1,13 @@
+{
+    "autosave": 5,
+    "backup": false,
+    "colorcolumn": 80,
+    "diffgutter": true,
+    "fastdirty": true,
+    "hlsearch": true,
+    "parsecursor": true,
+    "rmtrailingws": true,
+    "savecursor": true,
+    "softwrap": true,
+    "tabsize": 8
+}
