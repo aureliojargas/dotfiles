@@ -21,6 +21,9 @@ is_macos() {
     test "$(uname)" = Darwin
 }
 
+# Use brew tools (if installed)
+add_to_path /home/linuxbrew/.linuxbrew/bin
+
 # My dear ~/bin
 add_to_path top $HOME/bin
 

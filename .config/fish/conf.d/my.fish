@@ -1,3 +1,6 @@
+# Use brew tools (if installed)
+fish_add_path /home/linuxbrew/.linuxbrew/bin
+
 # Add my dear ~/bin to PATH
 fish_add_path ~/bin
 
