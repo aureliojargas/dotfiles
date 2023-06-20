@@ -150,6 +150,7 @@ set paths \
     .bashrc.my \
     .config/fish/conf.d/my.fish \
     .config/fish/functions/fish_prompt.fish \
+    .config/micro/bindings.json \
     .config/micro/settings.json \
     .gemrc \
     .gitconfig \
@@ -178,6 +179,7 @@ for path_ in $paths
 end
 
 if is_chromeos
+    rm $HOME/.config/micro/bindings.json
     create_symlink \
         $dotfiles_dir/.config/micro/bindings.chromeos.json \
         $HOME/.config/micro/bindings.json

@@ -2,6 +2,4 @@
     "Alt-/": "lua:comment.comment",
     "Alt-q": "command-edit:textfilter fmt -w 80 -p #",
     "CtrlUnderscore": "lua:comment.comment",
-    "PageDown": "MoveLinesDown",
-    "PageUp": "MoveLinesUp"
 }
