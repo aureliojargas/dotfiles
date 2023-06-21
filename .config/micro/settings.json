@@ -10,7 +10,6 @@
     },
     "hlsearch": true,
     "parsecursor": true,
-    "rmtrailingws": true,
     "savecursor": true,
     "softwrap": true,
     "tabsize": 8
