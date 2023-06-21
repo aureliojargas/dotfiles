@@ -4,6 +4,10 @@
     "colorcolumn": 80,
     "diffgutter": true,
     "fastdirty": true,
+    "ft:git-commit": {
+        "colorcolumn": 72,
+        "filetype": "markdown"
+    },
     "hlsearch": true,
     "parsecursor": true,
     "rmtrailingws": true,
