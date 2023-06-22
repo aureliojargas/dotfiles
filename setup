@@ -151,6 +151,7 @@ set paths \
     .config/fish/conf.d/my.fish \
     .config/fish/functions/fish_prompt.fish \
     .config/micro/bindings.json \
+    .config/micro/plug \
     .config/micro/settings.json \
     .gemrc \
     .gitconfig \
