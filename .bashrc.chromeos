@@ -1,0 +1,4 @@
+# Path to software installed with pip3 install --user
+add_to_path top ~/.local/bin
+
+# vim: filetype=sh

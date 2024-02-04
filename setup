@@ -174,6 +174,12 @@ if is_macos
         .config/fish/conf.d/my.osx.fish
 end
 
+if is_chromeos
+    set paths $paths \
+        .bashrc.chromeos \
+        .config/fish/conf.d/my.chromeos.fish
+end
+
 log 'Create symlinks'
 for path_ in $paths
     create_symlink $dotfiles_dir/$path_ $HOME/$path_
