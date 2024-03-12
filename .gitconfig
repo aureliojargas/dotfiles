@@ -40,6 +40,7 @@
 [core]
     editor = ed --loose-exit-status  # ed challenge :)
     pager = diff-so-fancy | less --tabs=4 -RFX  # word-highlight diffs
+    # pager = delta
     excludesfile = ~/.gitignore_global
 
 [color]
@@ -51,14 +52,16 @@
     colormoved = default
     colormovedws = allow-indentation-change
 
-# https://github.com/dandavison/delta
-# https://github.com/dandavison/delta/issues/137 (whitespace issue)
-[delta]
-    line-numbers = true
-    # syntax-theme = Monokai Extended
-    # syntax-theme = ansi-dark
-    # syntax-theme = zenburn
-    syntax-theme = GitHub
+[delta]  # https://github.com/dandavison/delta
+    light = false
+    syntax-theme = GitHub  # Monokai Extended, ansi-dark, zenburn
+    line-numbers = false
+    side-by-side = false
+    whitespace-error-style = red reverse  # trailing spaces are red
+    navigate = true  # n and N move between diff sections
+
+[interactive]
+    # diffFilter = delta --color-only
 
 [help]
     autocorrect = 1  # fix typos
