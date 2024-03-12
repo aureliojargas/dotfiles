@@ -4,8 +4,9 @@ add_to_path top /opt/homebrew/bin
 # Use brew GNU utils (gsed, gcut, gwc, ...) without the g prefix
 add_to_path top /opt/homebrew/opt/coreutils/libexec/gnubin
 
-# Path to software installed with pip3 install --user
+# Path to software installed with pip3 install --user (see site.USER_BASE)
 add_to_path top ~/Library/Python/3.9/bin
 add_to_path top ~/Library/Python/3.10/bin
+add_to_path top ~/Library/Python/3.11/bin
 
 # vim: filetype=sh

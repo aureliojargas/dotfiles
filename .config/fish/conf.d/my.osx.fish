@@ -7,6 +7,7 @@ fish_add_path /opt/homebrew/opt/coreutils/libexec/gnubin
 # Use brew ruby by default (Ruby 2.7 for Jekyll 4.1.1)
 # fish_add_path /usr/local/opt/ruby/bin
 
-# Path to software installed with pip3 install --user
+# Path to software installed with pip3 install --user (see site.USER_BASE)
 fish_add_path ~/Library/Python/3.9/bin
 fish_add_path ~/Library/Python/3.10/bin
+fish_add_path ~/Library/Python/3.11/bin
