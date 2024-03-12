@@ -45,9 +45,6 @@
 [color]
     ui = auto
 
-[color "diff"]
-    meta = magenta
-
 # https://github.com/dandavison/delta
 # https://github.com/dandavison/delta/issues/137 (whitespace issue)
 [delta]
