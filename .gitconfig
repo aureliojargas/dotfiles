@@ -35,10 +35,11 @@
     worddiff = diff --color-words
 
 [commit]
-    status = false  # no `git status` output in commit template
+    status = true  # show `git status` output in commit template
 
 [core]
-    editor = ed --loose-exit-status  # ed challenge :)
+    # editor = ed --loose-exit-status  # ed challenge :)
+    editor = micro
     # pager = diff-so-fancy | less --tabs=4 -RFX  # word-highlight diffs
     pager = delta
     excludesfile = ~/.gitignore_global
