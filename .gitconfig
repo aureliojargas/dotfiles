@@ -45,6 +45,12 @@
 [color]
     ui = auto
 
+[diff]
+    # Color moved lines differently
+    # https://dev.to/cloudx/how-to-color-the-moved-code-in-git-10ei
+    colormoved = default
+    colormovedws = allow-indentation-change
+
 # https://github.com/dandavison/delta
 # https://github.com/dandavison/delta/issues/137 (whitespace issue)
 [delta]
