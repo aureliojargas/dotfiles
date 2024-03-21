@@ -44,6 +44,9 @@
     pager = delta
     excludesfile = ~/.gitignore_global
 
+[branch]
+    sort = committerdate  # show recently changed branches at bottom
+
 [color]
     ui = auto
 
