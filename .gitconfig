@@ -55,7 +55,7 @@
 
 [delta]  # https://github.com/dandavison/delta
     light = false
-    syntax-theme = GitHub  # Monokai Extended, ansi-dark, zenburn
+    syntax-theme = GitHub  # GitHub, Monokai Extended, ansi, zenburn
     line-numbers = false
     side-by-side = false
     whitespace-error-style = red reverse  # trailing spaces are red
