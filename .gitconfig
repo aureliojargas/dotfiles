@@ -80,9 +80,12 @@
 [remote "upstream"]
     prune = true  # Autoremove already deleted remote branches
 
-[include]
-    # Use separate file for username, credentials, etc
-    path = ~/.gitconfig.local
+# Use separate files for username, credentials, etc
+# https://git-scm.com/docs/git-config#_includes
+[includeIf "gitdir:~/k/a/"]
+    path = ~/.gitconfig.personal
+[includeIf "gitdir:~/k/w/"]
+    path = ~/.gitconfig.work
 
 # Some useful Git commands that I always have to search the web
 #
