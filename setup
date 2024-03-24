@@ -278,7 +278,7 @@ if is_macos
 end
 
 log 'Setup Git local configuration (manual intervention needed)'
-set git_config_local $HOME/.gitconfig.local
+set git_config_local $HOME/.gitconfig.personal
 if is_github_codespace
     # GitHub Codespace sets GIT_COMMITTER_EMAIL and GIT_COMMITTER_NAME
     # env variables to the correct values
