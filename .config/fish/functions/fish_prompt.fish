@@ -74,7 +74,7 @@ function fish_prompt --description 'Write out the prompt'
     end
 
     # horizontal line
-    set_color $color_cwd
+    set_color green
     string repeat -n $COLUMNS –
     set_color normal
 
@@ -82,7 +82,7 @@ function fish_prompt --description 'Write out the prompt'
     echo -n (hostname)" "
 
     # working dir
-    set_color $color_cwd
+    set_color green
     echo -n (prompt_pwd)
     set_color normal
 
