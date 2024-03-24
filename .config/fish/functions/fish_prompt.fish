@@ -78,8 +78,12 @@ function fish_prompt --description 'Write out the prompt'
     string repeat -n $COLUMNS –
     set_color normal
 
-    # hostname
-    echo -n (hostname)" "
+    # show a red "ssh" if we're on a remote machine
+    if set -q SSH_TTY; or set -q SSH_CLIENT
+        set_color red
+        echo -n 'ssh '
+        set_color normal
+    end
 
     # working dir
     set_color green
