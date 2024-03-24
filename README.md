@@ -8,4 +8,4 @@ I use the Fish shell. See `.config/fish/`.
 
 ## Setup a new machine
 
-    $ fish setup.fish
+    $ fish setup
