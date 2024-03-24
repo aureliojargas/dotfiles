@@ -4,10 +4,7 @@ My config files.
 
 I try to be a minimalist. No config fireworks here.
 
-- Bash: everything is inside `.bashrc` and there's no `.bash_profile` or `.profile`.
-
-- Fish: config files in `.config/fish/conf.d` and `.config/fish/functions`.
-
+I use the Fish shell. See `.config/fish/`.
 
 ## Setup a new machine
 

@@ -13,8 +13,6 @@ set dotfiles_dir $PWD
 
 set user_bin $HOME/bin
 
-set git_prompt_url https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
-set git_completion_url https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 set fancy_diff_url https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy
 set replace_url https://raw.githubusercontent.com/aureliojargas/replace/main/replace.py
 
@@ -97,15 +95,6 @@ function pipx_install
     run pipx install $argv
 end
 
-function insert_line -a line file
-    if grep -F -x -q $line $file
-        already_done
-    else
-        echo $line >>$file
-        done
-    end
-end
-
 function create_symlink -a target symlink
     if not test (count $argv) -eq 2
         echo ERROR: usage: create_symlink target symlink
@@ -147,7 +136,6 @@ end
 
 set paths \
     .aliases \
-    .bashrc.my \
     .config/fish/conf.d/my.fish \
     .config/fish/functions/fish_prompt.fish \
     .config/micro/bindings.json \
@@ -163,14 +151,12 @@ set paths \
 
 if is_termux
     set paths $paths \
-        .bashrc.termux \
         .config/fish/conf.d/my.termux.fish \
         .termux
 end
 
 if is_macos
     set paths $paths \
-        .bashrc.osx \
         .config/fish/conf.d/my.osx.fish
 end
 
@@ -184,27 +170,6 @@ if is_chromeos
     create_symlink \
         $dotfiles_dir/.config/micro/bindings.chromeos.json \
         $HOME/.config/micro/bindings.json
-end
-
-log 'Source dotfiles custom .bashrc.my from ~/.bashrc'
-insert_line "test -f $dotfiles_dir/.bashrc.my && source \$_" $HOME/.bashrc
-
-log 'Download .git-prompt.sh for Bash'
-set git_prompt $HOME/.git-prompt.sh
-if test -f $git_prompt
-    already_done
-else
-    curl --location --silent $git_prompt_url >$git_prompt
-    done
-end
-
-log 'Download .git-completion.bash for Bash'
-set git_completion $HOME/.git-completion.bash
-if test -f $git_completion
-    already_done
-else
-    curl --location --silent $git_completion_url >$git_completion
-    done
 end
 
 log 'Create user bin directory'
