@@ -73,28 +73,37 @@ function fish_prompt --description 'Write out the prompt'
             set suffix '$'
     end
 
-    # PWD
+    # horizontal line
     set_color $color_cwd
     string repeat -n $COLUMNS –
     set_color normal
+
+    # hostname
     echo -n (hostname)" "
+
+    # working dir
     set_color $color_cwd
     echo -n (prompt_pwd)
     set_color normal
 
+    # git
     printf '%s ' (fish_vcs_prompt)
 
-    # Show activated Python virtual env
+    # show activated Python virtual env
     if set -q VIRTUAL_ENV
         set_color yellow
         printf '[%s] ' (basename $VIRTUAL_ENV)
         set_color normal
     end
 
+    # exit status from last command (e.g.: "[1]" in red)
     set -l pipestatus_string (__fish_print_pipestatus "[" "] " "|" (set_color $fish_color_status) (set_color --bold $fish_color_status) $last_pipestatus)
     echo -n $pipestatus_string
     set_color normal
 
+    # line break
     echo
+
+    # finally, the actual "$ " prompt
     echo -n "$suffix "
 end
