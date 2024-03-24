@@ -93,8 +93,8 @@ function brew_install
     run brew install --quiet $argv
 end
 
-function pip_install
-    run pip3 install --quiet --disable-pip-version-check $argv
+function pipx_install
+    run pipx install $argv
 end
 
 function insert_line -a line file
@@ -174,12 +174,6 @@ if is_macos
         .config/fish/conf.d/my.osx.fish
 end
 
-if is_chromeos
-    set paths $paths \
-        .bashrc.chromeos \
-        .config/fish/conf.d/my.chromeos.fish
-end
-
 log 'Create symlinks'
 for path_ in $paths
     create_symlink $dotfiles_dir/$path_ $HOME/$path_
@@ -248,11 +242,11 @@ end
 log 'Install extra software'
 if is_macos
     brew_install coreutils ed fish gnu-sed python shellcheck tig wget
-    pip_install --user black git-revise pylint
+    pipx_install black git-revise pylint
 else if is_termux
     pkg update
     pkg install file fish git make openssh python python2 tig vim
-    pip_install black git-revise pylint
+    pipx_install black git-revise pylint
     echo 'pkg install lynx  # funcoeszz'
     echo 'pkg install perl  # diff-so-fancy'
     echo 'pkg install ruby  # Jekyll'
@@ -260,7 +254,7 @@ else if is_termux
 else if is_linux
     sudo apt --quiet --quiet update
     apt_install ed make python3-pip tig
-    pip_install black git-revise pylint
+    pipx_install black git-revise pylint
     echo 'sudo apt install lynx  # funcoeszz'
     echo 'sudo apt install ruby  # Jekyll'
 else if is_github_codespace

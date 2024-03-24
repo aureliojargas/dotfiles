@@ -2,7 +2,7 @@
 fish_add_path /home/linuxbrew/.linuxbrew/bin
 
 # Python tools installed with pipx
-fish_add_path top $HOME/.local/bin
+fish_add_path top ~/.local/bin
 
 # Add my dear ~/bin to PATH
 fish_add_path ~/bin
