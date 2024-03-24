@@ -22,7 +22,7 @@ is_macos() {
 }
 
 # Use brew tools (if installed)
-add_to_path /home/linuxbrew/.linuxbrew/bin
+add_to_path top /home/linuxbrew/.linuxbrew/bin
 
 # Python tools installed with pipx
 add_to_path top $HOME/.local/bin
