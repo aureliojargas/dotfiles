@@ -2,6 +2,7 @@
     "autosave": 5,
     "backup": false,
     "colorcolumn": 80,
+    "colorscheme": "bubblegum",
     "diffgutter": true,
     "fastdirty": true,
     "ft:git-commit": {
