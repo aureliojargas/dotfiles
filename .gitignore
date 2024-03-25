@@ -1,4 +1,4 @@
 # auto generated files inside symlinked folders
-.termux/shell
-.vim/.netrwhist
-.vim/pack/
+/.termux/shell
+/.vim/.netrwhist
+/.vim/pack/
