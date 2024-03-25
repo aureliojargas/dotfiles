@@ -1,6 +1,3 @@
-# brew utils have precedence over macOS utils
-fish_add_path /opt/homebrew/bin
-
 # Use brew GNU utils (gsed, gcut, gwc, ...) without the g prefix
 fish_add_path /opt/homebrew/opt/coreutils/libexec/gnubin
 

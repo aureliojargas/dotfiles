@@ -137,6 +137,7 @@ end
 set paths \
     .aliases \
     .config/fish/conf.d/my.fish \
+    .config/fish/functions/brew_activate.fish \
     .config/fish/functions/fish_prompt.fish \
     .config/micro/bindings.json \
     .config/micro/plug \

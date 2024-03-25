@@ -1,5 +1,5 @@
-# Use brew tools (if installed)
-fish_add_path /home/linuxbrew/.linuxbrew/bin
+# Activate brew tools (if available)
+brew_activate
 
 # Python tools installed with pipx
 fish_add_path top ~/.local/bin
