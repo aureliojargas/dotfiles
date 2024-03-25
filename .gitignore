@@ -2,3 +2,7 @@
 /.termux/shell
 /.vim/.netrwhist
 /.vim/pack/
+
+# other local-only files
+/.vscode
+/.a.md
