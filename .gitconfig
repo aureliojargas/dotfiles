@@ -44,6 +44,9 @@
     pager = delta
     excludesfile = ~/.gitignore_global
 
+[blame]
+    coloring = highlightRecent  # --color-by-age
+
 [branch]
     sort = committerdate  # show recently changed branches at bottom
 
