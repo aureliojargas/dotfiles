@@ -19,7 +19,7 @@
         --pretty=format:'%Cblue%h%Creset %C(yellow)%ad%Creset %Cred%<(22,trunc)%ae%Creset %s'
 
     # hash, date, summary
-    log3 = !sh -c 'git log4 $@ --color=always | tr -s \" \" | cut -d \" \" -f 1,2,4-' -
+    log3 = !sh -c 'git log4 --color=always $@ | tr -s \" \" | cut -d \" \" -f 1,2,4-' -
 
     # hash, summary
     log2 = !sh -c 'git log3 $@ | cut -d \" \" -f 1,4-' -
