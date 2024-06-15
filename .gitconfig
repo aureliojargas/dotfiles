@@ -28,6 +28,10 @@
 
     new = !sh -c 'git log4 -n 999 @{1}..@{0}'  # What's new since the last git pull?
 
+    # git sed 's/foo/bar/g'
+    # git sed 's/foo/bar/g' '*.py'
+    sed = !sh -c 'git ls-files -z -- \"${2:-*}\" | xargs -0 gsed -i \"$1\"' -
+
     uncommit = reset --soft HEAD^
 
     unstage = reset HEAD
