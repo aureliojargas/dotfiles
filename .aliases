@@ -49,6 +49,7 @@ alias gap='git add -p'
 alias grp='git reset -p'
 alias gc='git commit'
 alias gca='git-pre-commit; git commit --amend'
+alias gcaa='git commit --amend --no-verify --no-edit'
 alias gcm='git commit-message'
 alias gpf='git push --force-with-lease --force-if-includes'  # safer force-push
 alias gpu='git push -u'
