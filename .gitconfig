@@ -2,6 +2,9 @@
 
 [alias]  # https://git.wiki.kernel.org/index.php/Aliases
 
+    # Using $GIT_PREFIX to workaround aliases running from the repository root
+    # https://til.codeinthehole.com/posts/that-git-aliases-that-run-an-external-command-are-run-from-the-repository-root/
+
     co = checkout
 
     commit-message = !sh -c 'git-pre-commit && git commit -m \"$*\"' -
@@ -29,8 +32,10 @@
     new = !sh -c 'git log4 -n 999 @{1}..@{0}'  # What's new since the last git pull?
 
     # git sed 's/foo/bar/g'
-    # git sed 's/foo/bar/g' '*.py'
-    sed = !sh -c 'git ls-files -z -- \"${2:-*}\" | xargs -0 gsed -i \"$1\"' -
+    sed = "!f() { cd ${GIT_PREFIX:-./}; git grep -z -l . | xargs -0 gsed -E -i \"$1\"; }; f"
+
+    # git sed2 's/foo/bar/g' '*.py'
+    sed2 = "!f() { cd ${GIT_PREFIX:-./}; git ls-files -z -- \"${2:-*}\" | xargs -0 -n 1 gsed -E -i \"$1\"; }; f"
 
     uncommit = reset --soft HEAD^
 
