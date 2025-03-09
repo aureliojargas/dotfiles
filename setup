@@ -207,13 +207,13 @@ end
 
 log 'Install extra software'
 if is_macos
-    brew_install coreutils ed fish git-delta git-revise gnu-sed notunes pipx python shellcheck tig wget
+    brew_install coreutils ed fish git-delta git-revise gnu-sed notunes pipx python shellcheck tig tree wget
     # Until micro-2.0.14 is not released, install from HEAD to get this fix:
     # https://github.com/zyedidia/micro/issues/2848
     brew_install micro --HEAD
 else if is_termux
     pkg update
-    pkg install file fish git git-delta make openssh python tig vim
+    pkg install file fish git git-delta make openssh python tig tree vim
     pkg install termux-api  # for pbcopy/pbpaste aliases
     python -m pip install --user pipx
     pipx_install git-revise
@@ -222,7 +222,7 @@ else if is_termux
     echo 'pkg install ruby  # Jekyll'
 else if is_linux
     sudo apt --quiet --quiet update
-    apt_install ed make python3-pip tig
+    apt_install ed make python3-pip tig tree
     brew_install fish git-delta git-revise pipx shellcheck
     # Until micro-2.0.14 is not released, install from HEAD to get this fix:
     # https://github.com/zyedidia/micro/issues/2848
@@ -235,7 +235,7 @@ else if is_github_codespace
     # devcontainer (https://github.com/aureliojargas/devcontainer) since
     # those are already installed there.
     sudo apt --quiet --quiet update
-    apt_install ed git-revise shellcheck tig
+    apt_install ed git-revise shellcheck tig tree
 end
 
 if is_macos
