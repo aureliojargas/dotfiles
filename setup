@@ -245,7 +245,7 @@ else if is_android
     # https://docs.brew.sh/Homebrew-on-Linux#arm-unsupported
 
     sudo apt --quiet --quiet update
-    apt_install ed fish make micro pipx python3-pip shellcheck tig tree
+    apt_install ed fish make pipx python3-pip shellcheck tig tree
     pipx_install git-revise
 
     log 'Installing git-delta from GitHub'
@@ -256,6 +256,18 @@ else if is_android
         download $delta_arm64_url /tmp/delta.deb
         run sudo dpkg -i /tmp/delta.deb
         done
+    end
+
+    log 'Installing micro from GitHub'
+    if command -v micro
+        already_done
+    else
+        set micro_version 2.0.14
+        set micro_arm64_url https://github.com/zyedidia/micro/releases/download/v$micro_version/micro-$micro_version-linux-arm64.tgz
+        download $micro_arm64_url /tmp/micro.tgz
+        tar -C /tmp -xzf /tmp/micro.tgz
+        cp /tmp/micro-$micro_version/micro ~/bin
+        done Installed ~/bin/micro
     end
 
     log 'Some optional installs you may want to do'
