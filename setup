@@ -88,6 +88,10 @@ function run
     set fish_trace 0
 end
 
+function download
+    run curl --location --silent --output $argv[2] $argv[1]
+end
+
 function apt_install
     run sudo apt --yes --quiet --quiet install --no-install-recommends $argv
 end
@@ -196,7 +200,7 @@ set fancy_diff $user_bin/diff-so-fancy
 if test -f $fancy_diff; and test -x $fancy_diff
     already_done
 else
-    curl --location --silent $fancy_diff_url >$fancy_diff
+    download $fancy_diff_url $fancy_diff
     chmod +x $fancy_diff
     done Installed $fancy_diff
 end
@@ -206,7 +210,7 @@ set replace_path $user_bin/replace
 if command --search --quiet replace
     already_done
 else
-    curl --location --silent $replace_url >$replace_path
+    download $replace_url $replace_path
     chmod +x $replace_path
     done Installed $replace_path
 end
@@ -243,7 +247,7 @@ else if is_android
         echo Skipping, already installed
     else
         set delta_arm64_url https://github.com/dandavison/delta/releases/download/0.18.2/git-delta_0.18.2_arm64.deb
-        curl --location --silent $delta_arm64_url > /tmp/delta.deb
+        download $delta_arm64_url /tmp/delta.deb
         sudo dpkg -i /tmp/delta.deb
     end
     echo
