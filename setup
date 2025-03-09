@@ -225,6 +225,8 @@ else if is_termux
     pkg install termux-api  # for pbcopy/pbpaste aliases
     python -m pip install --user pipx
     pipx_install git-revise
+
+    log 'Some optional installs you may want to do'
     echo 'pkg install lynx  # funcoeszz'
     echo 'pkg install perl  # diff-so-fancy'
     echo 'pkg install ruby  # Jekyll'
@@ -233,6 +235,8 @@ else if is_linux
     sudo apt --quiet --quiet update
     apt_install ed make python3-pip tig tree
     brew_install fish git-delta git-revise micro pipx shellcheck
+
+    log 'Some optional installs you may want to do'
     echo 'sudo apt install lynx  # funcoeszz'
     echo 'sudo apt install ruby  # Jekyll'
 
@@ -244,18 +248,17 @@ else if is_android
     apt_install ed fish make micro pipx python3-pip shellcheck tig tree
     pipx_install git-revise
 
-    echo
-    echo Installing delta from GitHub
+    log 'Installing git-delta from GitHub'
     if command -v delta
-        echo Skipping, already installed
+        already_done
     else
         set delta_arm64_url https://github.com/dandavison/delta/releases/download/0.18.2/git-delta_0.18.2_arm64.deb
         download $delta_arm64_url /tmp/delta.deb
-        sudo dpkg -i /tmp/delta.deb
+        run sudo dpkg -i /tmp/delta.deb
+        done
     end
-    echo
 
-    echo 'sudo apt install lynx  # funcoeszz'
+    log 'Some optional installs you may want to do'
     echo 'sudo apt install ruby  # Jekyll'
 
 else if is_github_codespace
