@@ -218,6 +218,7 @@ end
 log 'Install extra software'
 if is_macos
     brew_install coreutils ed fish git-delta git-revise gnu-sed micro notunes pipx python shellcheck tig tree wget
+
 else if is_termux
     pkg update
     pkg install file fish git git-delta make openssh python tig tree vim
@@ -227,12 +228,14 @@ else if is_termux
     echo 'pkg install lynx  # funcoeszz'
     echo 'pkg install perl  # diff-so-fancy'
     echo 'pkg install ruby  # Jekyll'
+
 else if is_linux
     sudo apt --quiet --quiet update
     apt_install ed make python3-pip tig tree
     brew_install fish git-delta git-revise micro pipx shellcheck
     echo 'sudo apt install lynx  # funcoeszz'
     echo 'sudo apt install ruby  # Jekyll'
+
 else if is_android
     # brew is not supported on ARM64
     # https://docs.brew.sh/Homebrew-on-Linux#arm-unsupported
@@ -254,6 +257,7 @@ else if is_android
 
     echo 'sudo apt install lynx  # funcoeszz'
     echo 'sudo apt install ruby  # Jekyll'
+
 else if is_github_codespace
     # Install the missing software just in case we're running on the
     # default GitHub Codespaces container. This is a noop in my personal
