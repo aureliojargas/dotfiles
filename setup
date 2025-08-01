@@ -280,6 +280,16 @@ else if is_github_codespace
     # those are already installed there.
     sudo apt --quiet --quiet update
     apt_install ed git-revise shellcheck tig tree
+
+    log 'Installing git-delta from GitHub'
+    if command -v delta
+        already_done
+    else
+        set delta_amd64_url https://github.com/dandavison/delta/releases/download/0.18.2/git-delta_0.18.2_amd64.deb
+        download $delta_amd64_url /tmp/delta.deb
+        run sudo dpkg -i /tmp/delta.deb
+        done
+    end
 end
 
 if is_macos
