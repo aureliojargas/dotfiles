@@ -59,6 +59,7 @@ alias gr='git remote -v'
 alias gl='git log4'
 alias gl2='git log2'
 alias gl3='git log3'
+alias lg=lazygit
 
 # ed: Show a ruler as reference to git commit 50/72 max width
 alias ed-ruler="echo '-----------------------------------------------50|-------------------72|'"

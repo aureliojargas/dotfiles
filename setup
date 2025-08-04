@@ -217,11 +217,11 @@ end
 
 log 'Install extra software'
 if is_macos
-    brew_install coreutils ed fish git-delta git-revise gnu-sed micro notunes pipx python shellcheck tig tree uv wget
+    brew_install coreutils ed fish git-delta git-revise gnu-sed lazygit micro notunes pipx python shellcheck tig tree uv wget
 
 else if is_termux
     pkg update
-    pkg install file fish git git-delta make openssh python tig tree vim
+    pkg install file fish git git-delta lazygit make openssh python tig tree vim
     pkg install termux-api  # for pbcopy/pbpaste aliases
     python -m pip install --user pipx
     pipx_install git-revise uv
@@ -236,7 +236,7 @@ else if is_termux
 else if is_linux
     sudo apt --quiet --quiet update
     apt_install ed make python3-pip tig tree
-    brew_install fish git-delta git-revise micro pipx shellcheck uv
+    brew_install fish git-delta git-revise lazygit micro pipx shellcheck uv
 
     log 'Some optional installs you may want to do'
     echo 'sudo apt install lynx  # funcoeszz'
