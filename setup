@@ -39,7 +39,7 @@ function is_github_codespace
     test "$CODESPACES" = true
 end
 
-function is_android  # avalible since Android 15
+function is_android  # available since Android 15
     test "$USER" = droid
 end
 
