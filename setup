@@ -285,6 +285,9 @@ else if is_github_codespace
     sudo apt --quiet --quiet update
     apt_install ed git-revise shellcheck tig tree
 
+    # If pipx is available (it's a Python devcontainer), install uv
+    pipx_install uv || true
+
     log 'Installing git-delta from GitHub'
     if command -v delta
         already_done
