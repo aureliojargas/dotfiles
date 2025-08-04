@@ -39,6 +39,8 @@
 
     uncommit = reset --soft HEAD^
 
+    update = "!f() { git co master || git co main && git pull && git new && git-cleanup && git branch | tail -n 5; }; f"
+
     unstage = reset HEAD
 
     worddiff = diff --color-words
