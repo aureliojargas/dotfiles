@@ -231,6 +231,8 @@ else if is_termux
     echo 'pkg install perl  # diff-so-fancy'
     echo 'pkg install ruby  # Jekyll'
 
+    git config core.editor vim
+
 else if is_linux
     sudo apt --quiet --quiet update
     apt_install ed make python3-pip tig tree
@@ -269,6 +271,8 @@ else if is_android
         cp /tmp/micro-$micro_version/micro ~/bin
         done Installed ~/bin/micro
     end
+
+    git config core.editor micro
 
     log 'Some optional installs you may want to do'
     echo 'sudo apt install ruby  # Jekyll'
