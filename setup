@@ -101,7 +101,9 @@ function brew_install
 end
 
 function pipx_install
-    run pipx install $argv
+    for pkg in $argv
+        run pipx install $pkg
+    end
 end
 
 function create_symlink -a target symlink
