@@ -229,7 +229,7 @@ else if is_termux
 
 else if is_linux
     sudo apt --quiet --quiet update
-    apt_install make python3-pip tig tree
+    apt_install make tig tree
     brew_install fish git-delta git-revise lazygit micro shellcheck uv
 
     log 'Some optional installs you may want to do'
@@ -241,7 +241,7 @@ else if is_android
     # https://docs.brew.sh/Homebrew-on-Linux#arm-unsupported
 
     sudo apt --quiet --quiet update
-    apt_install fish git-revise make python3-pip shellcheck tig tree
+    apt_install fish git-revise make shellcheck tig tree
     run_uv_install_script
 
     log 'Installing git-delta from GitHub'
