@@ -13,7 +13,6 @@ set dotfiles_dir $PWD
 
 set user_bin $HOME/bin
 
-set fancy_diff_url https://github.com/so-fancy/diff-so-fancy/releases/download/v1.4.4/diff-so-fancy
 set replace_url https://raw.githubusercontent.com/aureliojargas/replace/main/replace.py
 
 function is_termux
@@ -197,16 +196,6 @@ for path_ in bin/*
     create_symlink $dotfiles_dir/$path_ $HOME/$path_
 end
 
-log 'Install diff-so-fancy in user bin'
-set fancy_diff $user_bin/diff-so-fancy
-if test -f $fancy_diff; and test -x $fancy_diff
-    already_done
-else
-    download $fancy_diff_url $fancy_diff
-    chmod +x $fancy_diff
-    done Installed $fancy_diff
-end
-
 log 'Install the replace script'
 set replace_path $user_bin/replace
 if command --search --quiet replace
@@ -230,7 +219,6 @@ else if is_termux
 
     log 'Some optional installs you may want to do'
     echo 'pkg install lynx  # funcoeszz'
-    echo 'pkg install perl  # diff-so-fancy'
     echo 'pkg install ruby  # Jekyll'
 
     git config core.editor vim
