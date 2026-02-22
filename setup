@@ -219,7 +219,7 @@ end
 
 log 'Install extra software'
 if is_macos
-    brew_install coreutils ed fish git-delta git-revise gnu-sed lazygit micro notunes pipx python shellcheck tig tree uv wget
+    brew_install coreutils fish git-delta git-revise gnu-sed lazygit micro notunes pipx python shellcheck tig tree uv wget
 
 else if is_termux
     pkg update
@@ -237,7 +237,7 @@ else if is_termux
 
 else if is_linux
     sudo apt --quiet --quiet update
-    apt_install ed make python3-pip tig tree
+    apt_install make python3-pip tig tree
     brew_install fish git-delta git-revise lazygit micro pipx shellcheck uv
 
     log 'Some optional installs you may want to do'
@@ -249,7 +249,7 @@ else if is_android
     # https://docs.brew.sh/Homebrew-on-Linux#arm-unsupported
 
     sudo apt --quiet --quiet update
-    apt_install ed fish make pipx python3-pip shellcheck tig tree
+    apt_install fish make pipx python3-pip shellcheck tig tree
     pipx_install git-revise uv
 
     log 'Installing git-delta from GitHub'
@@ -285,7 +285,7 @@ else if is_github_codespace
     # devcontainer (https://github.com/aureliojargas/devcontainer) since
     # those are already installed there.
     sudo apt --quiet --quiet update
-    apt_install ed git-revise shellcheck tig tree
+    apt_install git-revise shellcheck tig tree
 
     # If pipx is available (it's a Python devcontainer), install uv
     pipx_install uv || true
@@ -299,11 +299,6 @@ else if is_github_codespace
         run sudo dpkg -i /tmp/delta.deb
         done
     end
-end
-
-if is_macos
-    log "macOS: Add 'ed' symlink so GNU ed can be used as git core.editor"
-    create_symlink /opt/homebrew/opt/ed/bin/ged $HOME/bin/ed
 end
 
 log 'Setup Git local configuration (manual intervention needed)'
