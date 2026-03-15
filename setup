@@ -231,7 +231,8 @@ else if is_termux
 else if is_linux || is_chromeos
     sudo apt --quiet --quiet update
     apt_install make tig tree
-    brew_install fish git-delta git-revise lazygit micro shellcheck uv
+    brew_install fish git-delta lazygit micro shellcheck uv
+    uv_install git-revise
 
     log 'Some optional installs you may want to do'
     echo 'sudo apt install lynx  # funcoeszz'
