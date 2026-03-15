@@ -228,7 +228,7 @@ else if is_termux
 
     git config core.editor vim
 
-else if is_linux
+else if is_linux || is_chromeos
     sudo apt --quiet --quiet update
     apt_install make tig tree
     brew_install fish git-delta git-revise lazygit micro shellcheck uv
