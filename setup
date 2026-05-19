@@ -228,49 +228,16 @@ else if is_termux
 
     git config core.editor vim
 
-else if is_linux || is_chromeos
+else if is_linux || is_chromeos || is_android
     sudo apt --quiet --quiet update
     apt_install make tig tree
     brew_install fish git-delta lazygit micro shellcheck uv
     uv_install git-revise
 
-    log 'Some optional installs you may want to do'
-    echo 'sudo apt install lynx  # funcoeszz'
-    echo 'sudo apt install ruby  # Jekyll'
-
-else if is_android
-    # brew is not supported on ARM64
-    # https://docs.brew.sh/Homebrew-on-Linux#arm-unsupported
-
-    sudo apt --quiet --quiet update
-    apt_install fish git-revise make shellcheck tig tree
-    run_uv_install_script
-
-    log 'Installing git-delta from GitHub'
-    if command -v delta
-        already_done
-    else
-        set delta_arm64_url https://github.com/dandavison/delta/releases/download/0.18.2/git-delta_0.18.2_arm64.deb
-        download $delta_arm64_url /tmp/delta.deb
-        run sudo dpkg -i /tmp/delta.deb
-        done
-    end
-
-    log 'Installing micro from GitHub'
-    if command -v micro
-        already_done
-    else
-        set micro_version 2.0.14
-        set micro_arm64_url https://github.com/zyedidia/micro/releases/download/v$micro_version/micro-$micro_version-linux-arm64.tgz
-        download $micro_arm64_url /tmp/micro.tgz
-        tar -C /tmp -xzf /tmp/micro.tgz
-        cp /tmp/micro-$micro_version/micro ~/bin
-        done Installed ~/bin/micro
-    end
-
     git config core.editor micro
 
     log 'Some optional installs you may want to do'
+    echo 'sudo apt install lynx  # funcoeszz'
     echo 'sudo apt install ruby  # Jekyll'
 
 else if is_github_codespace
