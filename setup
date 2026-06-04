@@ -226,7 +226,7 @@ else if is_termux
     echo 'pkg install lynx  # funcoeszz'
     echo 'pkg install ruby  # Jekyll'
 
-    git config core.editor vim
+    git config --global core.editor vim
 
 else if is_linux || is_chromeos || is_android
     sudo apt --quiet --quiet update
@@ -234,7 +234,7 @@ else if is_linux || is_chromeos || is_android
     brew_install fish git-delta lazygit micro shellcheck uv
     uv_install git-revise
 
-    git config core.editor micro
+    git config --global core.editor micro
 
     log 'Some optional installs you may want to do'
     echo 'sudo apt install lynx  # funcoeszz'
