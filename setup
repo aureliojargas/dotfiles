@@ -201,9 +201,9 @@ else
     mkdir -p -v $user_bin
 end
 
-log 'Install my scripts in ~/bin'
+log "Install my scripts in $user_bin"
 for path_ in bin/*
-    create_symlink $dotfiles_dir/$path_ $HOME/$path_
+    create_symlink $dotfiles_dir/$path_ $user_bin/(basename $path_)
 end
 
 log 'Install the replace script'
