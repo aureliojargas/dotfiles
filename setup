@@ -189,6 +189,11 @@ if is_chromeos
         $HOME/.config/micro/bindings.json
 end
 
+log 'Create system symlinks'
+if is_android
+    create_symlink /mnt/shared/Download $HOME/Download
+end
+
 log 'Create user bin directory'
 if test -d $user_bin
     already_done
