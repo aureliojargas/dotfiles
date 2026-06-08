@@ -4,9 +4,6 @@ brew_activate
 # Python tools installed with pipx
 fish_add_path top ~/.local/bin
 
-# Add my dear ~/bin to PATH
-fish_add_path ~/bin
-
 # https://github.com/fish-shell/fish-shell/issues/5394
 if status is-interactive
 

@@ -14,5 +14,5 @@ if status is-interactive
 
     # `pkg install micro` is broken for me
     # Since I set micro as the git editor, map it to Vim (aliases won't work)
-    ln -s (command -v vim) ~/bin/micro
+    ln -s (command -v vim) ~/.local/bin/micro
 end
