@@ -47,6 +47,7 @@
 
 [commit]
     status = true  # show `git status` output in commit template
+    gpgsign = true
 
 [core]
     # editor = micro
@@ -101,6 +102,9 @@
 
 [remote "upstream"]
     prune = true  # Autoremove already deleted remote branches
+
+[gpg]
+    format = ssh  # simpler that GPG
 
 # Use separate files for username, credentials, etc
 # https://git-scm.com/docs/git-config#_includes
