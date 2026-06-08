@@ -47,7 +47,7 @@
     status = true  # show `git status` output in commit template
 
 [core]
-    editor = code --wait  # micro, vim
+    editor = vim
     pager = delta
 
 [blame]
@@ -68,6 +68,7 @@
 [delta]  # https://github.com/dandavison/delta
     light = false
     syntax-theme = GitHub  # GitHub, Monokai Extended, ansi, zenburn
+    diff-highlight = true  # the only "theme" that works well in text mode
     line-numbers = false
     side-by-side = false
     whitespace-error-style = red reverse  # trailing spaces are red

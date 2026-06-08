@@ -42,6 +42,11 @@ function is_android  # available since Android 15
     test "$USER" = droid
 end
 
+function is_tty
+    is_linux
+    and string match -q -r '^/dev/tty[0-9]+$' (tty)
+end
+
 function log
     set_color cyan
     echo "[$argv]"
@@ -179,6 +184,11 @@ end
 if is_macos
     set paths $paths \
         .config/fish/conf.d/my.osx.fish
+end
+
+if is_tty
+    set paths $paths \
+        .config/fish/conf.d/my.tty.fish
 end
 
 log 'Create symlinks'
