@@ -49,8 +49,7 @@
     status = true  # show `git status` output in commit template
 
 [core]
-    # editor = micro
-    editor = code --wait
+    editor = code --wait  # micro, vim
     pager = delta
     excludesfile = ~/.gitignore_global
 
