@@ -77,6 +77,9 @@ autocmd FileType make set noexpandtab
 " Git commit message limited to 72 columns
 autocmd FileType gitcommit set textwidth=72
 
+" Custom Git configuration files
+autocmd BufNewFile,BufRead ~/.gitconfig.* set filetype=gitconfig
+
 " Quickly move betwwen open tabs
 nnoremap H :tabprevious<CR>
 nnoremap L :tabnext<CR>
