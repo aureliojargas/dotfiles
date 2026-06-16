@@ -150,6 +150,12 @@ if is_github_codespace
     set dotfiles_dir /workspaces/.codespaces/.persistedshare/dotfiles
 end
 
+# Files I'm not using anymore are not linked in $HOME
+set disabled_paths \
+    .gemrc \
+    .screenrc \
+    .tmux.conf
+
 set paths \
     .aliases \
     .config/fish/conf.d/my.fish \
@@ -158,11 +164,8 @@ set paths \
     .config/micro/bindings.json \
     .config/micro/plug \
     .config/micro/settings.json \
-    .gemrc \
     .gitconfig \
     .inputrc \
-    .screenrc \
-    .tmux.conf \
     .vim \
     .vimrc
 
