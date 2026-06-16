@@ -43,8 +43,6 @@
 
     unstage = reset HEAD
 
-    worddiff = diff --color-words
-
 [commit]
     status = true  # show `git status` output in commit template
 
