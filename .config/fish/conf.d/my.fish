@@ -7,6 +7,9 @@ fish_add_path top ~/.local/bin
 # https://github.com/fish-shell/fish-shell/issues/5394
 if status is-interactive
 
+    # No summarized path in prompt
+    set -x fish_prompt_pwd_dir_length 0
+
     # GNU ls: yellow folders, not blue
     set -x LS_COLORS 'di=33'
 
