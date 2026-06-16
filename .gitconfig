@@ -49,7 +49,6 @@
 [core]
     editor = code --wait  # micro, vim
     pager = delta
-    excludesfile = ~/.gitignore_global
 
 [blame]
     coloring = highlightRecent  # --color-by-age
