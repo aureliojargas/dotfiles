@@ -100,7 +100,8 @@
 [remote "upstream"]
     prune = true  # Autoremove already deleted remote branches
 
-# Use separate files for username, credentials, etc
+# Use separate files for username, credentials, local config.
+# Git won't error out if those files do not exist.
 # https://git-scm.com/docs/git-config#_includes
 [includeIf "gitdir:~/k/a/"]
     path = ~/.gitconfig.personal
