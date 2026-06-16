@@ -71,6 +71,9 @@ autocmd BufNewFile,BufRead *.t2t set filetype=txt2tags
 autocmd BufNewFile,BufRead */funcoeszz/{*.sh,testador/run}
     \ set noexpandtab textwidth=72
 
+" Makefile defaults
+autocmd FileType make set noexpandtab
+
 " Git commit message limited to 72 columns
 autocmd FileType gitcommit set textwidth=72
 
