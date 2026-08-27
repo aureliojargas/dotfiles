@@ -51,34 +51,34 @@ set list listchars=tab:\|·,trail:█,precedes:<,extends:>
 autocmd TextChanged,TextChangedI * silent write
 
 " YAML defaults
-autocmd FileType yaml set tabstop=2
+autocmd FileType yaml setlocal tabstop=2
 
 " HTML/CSS defaults
-autocmd FileType html,css set tabstop=2 textwidth=0
+autocmd FileType html,css setlocal tabstop=2 textwidth=0
 
 " Bash defaults
-autocmd FileType sh set textwidth=100
+autocmd FileType sh setlocal textwidth=100
 
 " Python defaults
-autocmd FileType python set textwidth=88  " black default
+autocmd FileType python setlocal textwidth=88  " black default
 autocmd FileType python hi pythonString ctermfg=lightgreen
 autocmd FileType python hi pythonRawString ctermfg=lightgreen
 
 " txt2tags
-autocmd BufNewFile,BufRead *.t2t set filetype=txt2tags
+autocmd BufNewFile,BufRead *.t2t setlocal filetype=txt2tags
 
 " Funções ZZ (tab-indented)
 autocmd BufNewFile,BufRead */funcoeszz/{*.sh,testador/run}
-    \ set noexpandtab textwidth=72
+    \ setlocal noexpandtab textwidth=72
 
 " Makefile defaults
-autocmd FileType make set noexpandtab
+autocmd FileType make setlocal noexpandtab
 
 " Git commit message limited to 72 columns
-autocmd FileType gitcommit set textwidth=72
+autocmd FileType gitcommit setlocal textwidth=72
 
 " Custom Git configuration files
-autocmd BufNewFile,BufRead ~/.gitconfig.* set filetype=gitconfig
+autocmd BufNewFile,BufRead ~/.gitconfig.* setlocal filetype=gitconfig
 
 " Quickly move betwwen open tabs
 nnoremap H :tabprevious<CR>
