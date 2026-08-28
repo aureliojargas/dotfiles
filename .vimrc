@@ -1,3 +1,6 @@
+" Detect file type, load plugins (e.g., matchit), auto-indent (gg=G)
+filetype plugin indent on
+
 " Colors, please
 syntax on
 
@@ -39,6 +42,9 @@ set shiftwidth=0
 " Append one, not two spaces after periods in 'gq'
 set nojoinspaces
 
+" Jump with % to matching start/end (e.g.: if/fi, <div></div>)
+packadd! matchit
+
 " Remember cursor position, save command history
 set viminfo='10,\"30,:40,%,n~/.viminfo
 autocmd BufReadPost * if line("'\"")|execute("normal `\"")|endif
@@ -55,6 +61,8 @@ autocmd FileType yaml setlocal tabstop=2
 
 " HTML/CSS defaults
 autocmd FileType html,css setlocal tabstop=2 textwidth=0
+" HTML tag closing on </ with native omni-completion and realign
+autocmd FileType html inoremap </ </<C-X><C-O><C-F>
 
 " Bash defaults
 autocmd FileType sh setlocal textwidth=100
