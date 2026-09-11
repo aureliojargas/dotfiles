@@ -9,6 +9,8 @@
 
     commit-message = !sh -c 'git-pre-commit && git commit -m \"$*\"' -
 
+    commit-message-no-verify = !sh -c 'git-pre-commit && git commit -m \"$*\" --no-verify' -
+
     cp = cherry-pick
 
     diffw = diff -w --ignore-blank-lines
